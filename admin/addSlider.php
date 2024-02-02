@@ -1,5 +1,5 @@
 <?php
-include("other_inc/head.php")
+include("inc/head.php")
 ?>
 
 <style>
@@ -9,7 +9,8 @@ include("other_inc/head.php")
         margin-top: 20px;
     }
 </style>
-
+<!-- partial -->
+<div class="main-panel">
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title"> Form elements </h3>
@@ -82,5 +83,5 @@ include("other_inc/head.php")
 
 
 <?php
-include("other_inc/footer.php")
+include("inc/footer.php")
 ?>

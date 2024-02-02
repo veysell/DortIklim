@@ -1,8 +1,9 @@
 <?php
-include("other_inc/head.php")
+include("inc/head.php")
 ?>
 
-
+<!-- partial -->
+<div class="main-panel">
 <div class="content-wrapper">
 
     <div class="col-lg-12 grid-margin stretch-card">
@@ -65,5 +66,5 @@ include("other_inc/head.php")
 
 
 <?php
-include("other_inc/footer.php")
+include("inc/footer.php")
 ?>

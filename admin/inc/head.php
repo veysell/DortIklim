@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="assets/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="assets/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
-    <!-- End plugin css for this page -->
+    <!-- End plugin css for this page -->  
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
@@ -29,15 +29,15 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="index.html"><img src="../assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle " src="../assets/images/faces/face15.jpg" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -86,9 +86,9 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-access-point"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -174,7 +174,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -244,7 +244,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
@@ -254,7 +254,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
@@ -264,7 +264,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
@@ -325,7 +325,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
+                    <img class="img-xs rounded-circle" src="../assets/images/faces/face15.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
@@ -364,5 +364,3 @@
             </button>
           </div>
         </nav>
-<!-- partial -->
-<div class="main-panel">
