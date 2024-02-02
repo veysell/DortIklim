@@ -6,7 +6,7 @@ include("inc/header.php");
 
 
     <div class="box-92819">
-      <h1 class="text-white mb-3">Causes</h1>
+      <h1 class="text-white mb-3">Faaliyetlerimiz</h1>
       <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ab doloremque a quia laboriosam suscipit, iure illum perspiciatis!</p>
     </div>
 
