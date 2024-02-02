@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /dortiklim/
+ErrorDocument 404 /error.php
+
+
+RewriteRule ^home index.php [L,NC]
+RewriteRule ^about about.php [L,NC]
+RewriteRule ^activity activity.php [L,NC]
+RewriteRule ^contact contact.php [L,NC]
+RewriteRule ^blog blog.php [L,NC]
