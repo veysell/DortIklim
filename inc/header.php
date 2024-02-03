@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=10.0">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -48,7 +49,7 @@
                     <div class="col-md-6 text-md-left pl-0">
                         <a href="#" class=" pr-3 pl-0">Home</a>
                         <a href="#" class="p-3">Events</a>
-                        <a href="#" class="p-3">Become A Volunteer</a>
+                        <a href="uyeOl.php" class="p-3">Become A Volunteer</a>
                     </div>
                     <div class="col-md-6 text-md-right">
                         <a href="#" class="p-3"><span class="icon-twitter"></span></a>

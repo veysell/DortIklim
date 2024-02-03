@@ -53,24 +53,24 @@ include("inc/head.php");
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                         echo "<script> Swal.fire({
                                                         icon: 'success',
-                                                        title: 'başarıı',
-                                                        text: 'ok ok ok',
+                                                        title: 'Tebrikss',
+                                                        text: 'Aferin amınagoyum',
                                                     })</script>";
                                     } else {
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                         echo "<script> Swal.fire({
                                                     icon: 'error',
                                                     title: 'Hata',
-                                                    text: 'db hata',
+                                                    text: 'Tekrar Deneyiniz',
                                                 })</script>";
                                     }
 
                                 } else {
                                     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                     echo "<script> Swal.fire({
-                                                    icon: 'error',
+                                                    icon: 'warning',
                                                     title: 'Hata',
-                                                    text: 'hata hata hata',
+                                                    text: 'Fotoğraf yüklenirken hata oluştu!',
                                                 })</script>";
                                 }
                             }
@@ -96,8 +96,8 @@ include("inc/head.php");
 
                             <div class="form-group">
                                 <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider
-                                        resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
-                                <input type="file" id="sliderImage" name="Url" class="file-upload-default"
+                                        resmi en az 1280x800 boyutunda olmalıdır!)</i></label>
+                                <input type="file" id="sliderImage" required name="Url" class="file-upload-default"
                                     onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled
