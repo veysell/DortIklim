@@ -28,6 +28,7 @@
 <script src="assets/js/file-upload.js"></script>
 <script src="assets/js/typeahead.js"></script>
 <script src="assets/js/select2.js"></script>
+<script src="assets/js/alerts.js"></script>
 <!-- inject:js -->
 <script src="assets/js/off-canvas.js"></script>
 <script src="assets/js/hoverable-collapse.js"></script>

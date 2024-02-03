@@ -2,6 +2,7 @@
 session_start();
 if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
   header("location:login");
+  
 }
 ?>
 <!DOCTYPE html>
@@ -29,6 +30,7 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
   <!-- endinject -->
   <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 

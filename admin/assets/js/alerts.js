@@ -2,15 +2,15 @@
   showSwal = function(type) {
     'use strict';
     if (type === 'basic') {
-      swal({
-        text: 'Any fool can use a computer',
-        button: {
-          text: "OK",
-          value: true,
-          visible: true,
-          className: "btn btn-primary"
-        }
-      })
+
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
+       
+      
 
     } else if (type === 'title-and-text') {
       swal({

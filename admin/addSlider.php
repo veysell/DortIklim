@@ -1,5 +1,8 @@
 <?php
-include("inc/head.php")
+include_once("queries/queries.php");
+
+include("inc/head.php");
+
 ?>
 
 <style>
@@ -21,46 +24,109 @@ include("inc/head.php")
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Slider Ekle</h4>
+                        <?php
+                        if (($_POST)) {
+                            $name = $_POST["sliderName"];
+                            $desc = $_POST["sliderDesc"];
+
+                            $active = ($_POST["isActive"] == 'on') ? 1 : 0;
 
 
-                        <form class="forms-sample">
+
+
+                            if ($_FILES["Url"]["error"] == 4) {
+                                $uploadOk = 0;
+                                $url = $sonuc["ImageUrl"];
+                            } else {
+                                $target_dir = "../images/";
+                                $target_file = $target_dir . basename(basename($_FILES["Url"]["name"]));
+                                $uploadOk = 1;
+                                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+                                $url = basename($_FILES["Url"]["name"]);
+                            }
+
+                            if ($uploadOk == 1) {
+                                if (move_uploaded_file($_FILES["Url"]["tmp_name"], $target_file)) {
+                                    $result = insertSlider($name, $desc, $active, $url);
+                                    if ($result) {
+                                        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
+                                        echo "<script> Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'başarıı',
+                                                        text: 'ok ok ok',
+                                                    })</script>";
+                                    } else {
+                                        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
+                                        echo "<script> Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Hata',
+                                                    text: 'db hata',
+                                                })</script>";
+                                    }
+
+                                } else {
+                                    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
+                                    echo "<script> Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Hata',
+                                                    text: 'hata hata hata',
+                                                })</script>";
+                                }
+                            }
+
+                        }
+
+                        ?>
+
+                        <form class="forms-sample" method="post" action="addSlider" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleInputName1">Slider Adı</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Slider İsmi Giriniz...">
+                                <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
+                                    placeholder="Slider İsmi Giriniz...">
                             </div>
 
-                            <div class="form-group">
-                                <style>
-                                    label i {
-                                        font-size: 90%;
-                                        color: #6c7293;
-                                    }
-                                </style>
 
-                                <div class="form-group">
-                                    <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
-                                    <input type="file" id="sliderImage" name="img[]" class="file-upload-default" onchange="previewImage(event)">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Dosya Seç</button>
-                                        </span>
-                                    </div>
-                                    <div id="previewContainer"></div>
-                                </div> <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
+                            <style>
+                                label i {
+                                    font-size: 90%;
+                                    color: #6c7293;
+                                }
+                            </style>
+
+                            <div class="form-group">
+                                <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider
+                                        resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
+                                <input type="file" id="sliderImage" name="Url" class="file-upload-default"
+                                    onchange="previewImage(event)">
+                                <div class="input-group col-xs-12">
+                                    <input type="text" class="form-control file-upload-info" disabled
+                                        placeholder="Resim Yükle">
+                                    <span class="input-group-append">
+                                        <button class="file-upload-browse btn btn-primary" type="button">Dosya
+                                            Seç</button>
+                                    </span>
+                                </div>
                                 <div id="previewContainer"></div>
                             </div>
+
                             <div class="form-group">
                                 <label for="exampleTextarea1">Slider Metni</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Slider alanında görünecek metni giriniz..."></textarea>
+                                <textarea class="form-control" id="exampleTextarea1" name="sliderDesc" rows="4"
+                                    placeholder="Slider alanında görünecek metni giriniz..."></textarea>
                             </div>
                             <div class="form-check form-check-success mb-4">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" checked=""> Aktif <i class="input-helper"></i></label>
+
+                                    <input type="checkbox" class="form-check-input" name="isActive" checked="">
+                                    Aktif <i class="input-helper"></i></label>
+
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
                             <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
                         </form>
+
+
                     </div>
                 </div>
             </div>
@@ -74,4 +140,4 @@ include("inc/head.php")
 
     <?php
     include("inc/footer.php")
-    ?>
+        ?>
