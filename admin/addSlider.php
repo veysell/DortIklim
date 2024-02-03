@@ -28,8 +28,8 @@ include("inc/head.php");
                         if (($_POST)) {
                             $name = $_POST["sliderName"];
                             $desc = $_POST["sliderDesc"];
-                            
-                            $active = ($_POST["isActive"]=='on')?1:0;
+
+                            $active = ($_POST["isActive"] == 'on') ? 1 : 0;
 
 
 
@@ -85,41 +85,31 @@ include("inc/head.php");
                                 <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
                                     placeholder="Slider İsmi Giriniz...">
                             </div>
-                            <div class="form-group">
 
-                                <label>Slider Resmi</label>
-                                <input type="file" name="Url" class="file-upload-default"
+
+                            <style>
+                                label i {
+                                    font-size: 90%;
+                                    color: #6c7293;
+                                }
+                            </style>
+
+                            <div class="form-group">
+                                <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider
+                                        resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
+                                <input type="file" id="sliderImage" name="Url" class="file-upload-default"
                                     onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled
-                                        placeholder="Resim Yükleyiniz">
+                                        placeholder="Resim Yükle">
                                     <span class="input-group-append">
                                         <button class="file-upload-browse btn btn-primary" type="button">Dosya
                                             Seç</button>
                                     </span>
                                 </div>
-
-                                <style>
-                                    label i {
-                                        font-size: 90%;
-                                        color: #6c7293;
-                                    }
-                                </style>
-
-                                <div class="form-group">
-                                    <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
-                                    <input type="file" id="sliderImage" name="img[]" class="file-upload-default" onchange="previewImage(event)">
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-primary" type="button">Dosya Seç</button>
-                                        </span>
-                                    </div>
-                                    <div id="previewContainer"></div>
-                                </div> <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
-
                                 <div id="previewContainer"></div>
                             </div>
+
                             <div class="form-group">
                                 <label for="exampleTextarea1">Slider Metni</label>
                                 <textarea class="form-control" id="exampleTextarea1" name="sliderDesc" rows="4"
@@ -128,10 +118,8 @@ include("inc/head.php");
                             <div class="form-check form-check-success mb-4">
                                 <label class="form-check-label">
 
-                                    <input type="checkbox" class="form-check-input" name="isActive" checked=""> Aktif <i
-                                        class="input-helper"></i></label>
-
-                                    <input type="checkbox" class="form-check-input" checked=""> Aktif <i class="input-helper"></i></label>
+                                    <input type="checkbox" class="form-check-input" name="isActive" checked="">
+                                    Aktif <i class="input-helper"></i></label>
 
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
