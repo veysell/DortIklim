@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
+   header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
