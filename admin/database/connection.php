@@ -20,3 +20,20 @@ try {
     echo 'Bağlantı hatası: ' . $e->getMessage();
     exit;
 }
+
+
+function frontGetAllData($table){
+    global $baglanti;
+    $sql = "SELECT * FROM $table where IsActive=1";
+    $query = $baglanti->prepare($sql);
+    $query->execute();
+    $data = array();
+    
+    if ($query->rowCount() > 0) {
+        while($row = $query->fetch()) {
+            $data[] = $row;
+        }
+    }
+
+    return $data;
+}
