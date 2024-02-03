@@ -21,7 +21,7 @@ include("inc/head.php")
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Slider Ekle</h4>
-                        
+
 
                         <form class="forms-sample">
                             <div class="form-group">
@@ -30,14 +30,24 @@ include("inc/head.php")
                             </div>
 
                             <div class="form-group">
-                                <label>Slider Resmi</label>
-                                <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükleyiniz">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Dosya Seç</button>
-                                    </span>
-                                </div>
+                                <style>
+                                    label i {
+                                        font-size: 90%;
+                                        color: #6c7293;
+                                    }
+                                </style>
+
+                                <div class="form-group">
+                                    <label for="sliderImage">Slider Resmi <i style="font-size: 90%; color: #6c7293;">(Slider resmi en az 1000x1000 boyutunda olmalıdır!)</i></label>
+                                    <input type="file" id="sliderImage" name="img[]" class="file-upload-default" onchange="previewImage(event)">
+                                    <div class="input-group col-xs-12">
+                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-primary" type="button">Dosya Seç</button>
+                                        </span>
+                                    </div>
+                                    <div id="previewContainer"></div>
+                                </div> <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
                                 <div id="previewContainer"></div>
                             </div>
                             <div class="form-group">
@@ -45,8 +55,8 @@ include("inc/head.php")
                                 <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Slider alanında görünecek metni giriniz..."></textarea>
                             </div>
                             <div class="form-check form-check-success mb-4">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" checked=""> Aktif <i class="input-helper"></i></label>
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" checked=""> Aktif <i class="input-helper"></i></label>
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
                             <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
