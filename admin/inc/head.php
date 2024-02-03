@@ -140,12 +140,20 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
           </div>
         </li>
         <li class="nav-item menu-items">
+          <a class="nav-link" href="listBlog">
+            <span class="menu-icon">
+              <i class="mdi mdi-playlist-play"></i>
+            </span>
+            <span class="menu-title">Blog Yazıları </span>
+            
+          </a>
+        </li>
+        <li class="nav-item menu-items">
           <a class="nav-link" href="faaliyetler">
             <span class="menu-icon">
               <i class="mdi mdi-playlist-play"></i>
             </span>
-            <span class="menu-title">Faaliyetler
-            </span>
+            <span class="menu-title">Faaliyetler </span>
             
           </a>
         </li>
