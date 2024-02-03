@@ -24,7 +24,7 @@ try {
 
 function frontGetAllData($table){
     global $baglanti;
-    $sql = "SELECT * FROM $table where IsActive=1";
+    $sql = "SELECT * FROM $table where IsActive=1 order by CreatedDate desc";
     $query = $baglanti->prepare($sql);
     $query->execute();
     $data = array();

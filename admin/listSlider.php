@@ -51,7 +51,7 @@ include("inc/head.php")
                                             </div>
                                         </td>
                                         <td class="col-2">
-                                            <a href="editSlider">
+                                            <a href="editSlider?id=<?= $slider["Id"] ?>">
                                                 <img src="../images/<?= $slider["ImagePath"] ?>"
                                                     style="width: 100px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
@@ -64,10 +64,14 @@ include("inc/head.php")
                                             </label>
                                         </td>
                                         <td class="col-1">
-                                            <a class="btn badge badge-warning" href="editSlider">Düzenle</a>
+                                            <a class="btn badge badge-warning"
+                                                href='editSlider?id=<?= $slider["Id"] ?>'>Düzenle</a>
                                         </td>
                                         <td class="col-1">
-                                            <a href="#" class="btn badge badge-danger">Sil</a>
+                                            <a href="delete?id=<?=$slider["Id"]?>&table=slider"
+                                                class="btn badge badge-danger" onclick="return confirm('Are you sure you want to delete this item')">Sil</a>
+                                            <?php
+                                            ?>
                                         </td>
                                     </tr>
 
