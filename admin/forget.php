@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -39,7 +39,7 @@
                                     <button type="submit" class="btn btn-primary btn-block enter-btn">Gönder</button>
                                 </div>
                                 
-                                <p class="sign-up">Giriş ekranına geri dön<a href="login.php"> Giriş Yap</a></p>
+                                <p class="sign-up">Giriş ekranına geri dön<a href="login"> Giriş Yap</a></p>
                             </form>
                         </div>
                     </div>

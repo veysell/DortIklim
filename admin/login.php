@@ -78,7 +78,9 @@
                   if(($pass==$sonuc['Password'])){
                       $_SESSION["Oturum"] = 6789;
                       $_SESSION["usernaname"] = $username;
-                      $_SESSION["role"] = $sonuc["role"];
+                      $_SESSION["Name"] = $sonuc["Name"];
+                      $_SESSION["Surname"] = $sonuc["Surname"];
+                      $_SESSION["role"] = ($sonuc["Role"]===1)?"Super Admin":"Admin";
                       header("location:index");
                   }
                   else{

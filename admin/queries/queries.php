@@ -36,7 +36,7 @@ function insertData($data) {
     }
 }
 
-function checkUser($userName, $password) {
+function getUserInfo($userName, $password) {
     global $conn;
     echo $conn;
     echo $userName."--".$password."";
