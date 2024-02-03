@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "/DortIklim": true
+    },
+    "search.exclude": {
+        "/DortIklim": true
+    },
+    "search.useGlobalIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true
+}
