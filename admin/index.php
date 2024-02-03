@@ -2,8 +2,6 @@
 include("inc/head.php");
 ?>
 
-
-
 <!-- partial -->
 <div class="main-panel">
           <div class="content-wrapper">
@@ -13,17 +11,13 @@ include("inc/head.php");
                   <div class="card-body py-0 px-0 px-sm-3">
                     <div class="row align-items-center">
                       <div class="col-4 col-sm-3 col-xl-2">
-                        <img src="../assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
+                        <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
                       </div>
-                      <div class="col-5 col-sm-7 col-xl-8 p-0">
-                        <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                        <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
+                      <div class="col-5 col-sm-7 col-xl-10 p-0">
+                      <h4 class="mb-1 mb-sm-0" style="font-family: 'Redressed', cursive;">Kim bir Müslümanın ihtiyacını giderirse, Allah da onun ihtiyacını giderir. Kim de bir Müslümanın bir sıkıntısını hafifletirse, Allah da onun sıkıntısını hafifletir.</h4>
+                        <p class="mb-0 font-weight-normal d-none d-sm-block"> (Buhari, Cihad, 6)</p>
                       </div>
-                      <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
-                        <span>
-                          <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-                        </span>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -334,7 +328,7 @@ include("inc/head.php");
                               </div>
                             </td>
                             <td>
-                              <img src="../assets/images/faces/face1.jpg" alt="image" />
+                              <img src="assets/images/faces/face1.jpg" alt="image" />
                               <span class="pl-2">Henry Klein</span>
                             </td>
                             <td> 02312 </td>
@@ -355,7 +349,7 @@ include("inc/head.php");
                               </div>
                             </td>
                             <td>
-                              <img src="../assets/images/faces/face2.jpg" alt="image" />
+                              <img src="assets/images/faces/face2.jpg" alt="image" />
                               <span class="pl-2">Estella Bryan</span>
                             </td>
                             <td> 02312 </td>
@@ -376,7 +370,7 @@ include("inc/head.php");
                               </div>
                             </td>
                             <td>
-                              <img src="../assets/images/faces/face5.jpg" alt="image" />
+                              <img src="assets/images/faces/face5.jpg" alt="image" />
                               <span class="pl-2">Lucy Abbott</span>
                             </td>
                             <td> 02312 </td>
@@ -397,7 +391,7 @@ include("inc/head.php");
                               </div>
                             </td>
                             <td>
-                              <img src="../assets/images/faces/face3.jpg" alt="image" />
+                              <img src="assets/images/faces/face3.jpg" alt="image" />
                               <span class="pl-2">Peter Gill</span>
                             </td>
                             <td> 02312 </td>
@@ -418,7 +412,7 @@ include("inc/head.php");
                               </div>
                             </td>
                             <td>
-                              <img src="../assets/images/faces/face4.jpg" alt="image" />
+                              <img src="assets/images/faces/face4.jpg" alt="image" />
                               <span class="pl-2">Sallie Reyes</span>
                             </td>
                             <td> 02312 </td>
@@ -448,7 +442,7 @@ include("inc/head.php");
                     <div class="preview-list">
                       <div class="preview-item border-bottom">
                         <div class="preview-thumbnail">
-                          <img src="../assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
+                          <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -462,7 +456,7 @@ include("inc/head.php");
                       </div>
                       <div class="preview-item border-bottom">
                         <div class="preview-thumbnail">
-                          <img src="../assets/images/faces/face8.jpg" alt="image" class="rounded-circle" />
+                          <img src="assets/images/faces/face8.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -476,7 +470,7 @@ include("inc/head.php");
                       </div>
                       <div class="preview-item border-bottom">
                         <div class="preview-thumbnail">
-                          <img src="../assets/images/faces/face9.jpg" alt="image" class="rounded-circle" />
+                          <img src="assets/images/faces/face9.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -490,7 +484,7 @@ include("inc/head.php");
                       </div>
                       <div class="preview-item border-bottom">
                         <div class="preview-thumbnail">
-                          <img src="../assets/images/faces/face11.jpg" alt="image" class="rounded-circle" />
+                          <img src="assets/images/faces/face11.jpg" alt="image" class="rounded-circle" />
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                           <div class="flex-grow">
@@ -512,20 +506,20 @@ include("inc/head.php");
                     <h4 class="card-title">Portfolio Slide</h4>
                     <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
                       <div class="item">
-                        <img src="../assets/images/dashboard/Rectangle.jpg" alt="">
+                        <img src="assets/images/dashboard/Rectangle.jpg" alt="">
                       </div>
                       <div class="item">
-                        <img src="../assets/images/dashboard/Img_5.jpg" alt="">
+                        <img src="assets/images/dashboard/Img_5.jpg" alt="">
                       </div>
                       <div class="item">
-                        <img src="../assets/images/dashboard/img_6.jpg" alt="">
+                        <img src="assets/images/dashboard/img_6.jpg" alt="">
                       </div>
                     </div>
                     <div class="d-flex py-4">
                       <div class="preview-list w-100">
                         <div class="preview-item p-0">
                           <div class="preview-thumbnail">
-                            <img src="../assets/images/faces/face12.jpg" class="rounded-circle" alt="">
+                            <img src="assets/images/faces/face12.jpg" class="rounded-circle" alt="">
                           </div>
                           <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">

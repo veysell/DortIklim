@@ -7,48 +7,27 @@ include("inc/head.php")
         max-width: 300px;
         max-height: 300px;
         margin-top: 20px;
+        border-radius: 5px;
     }
 </style>
 <!-- partial -->
 <div class="main-panel">
 <div class="content-wrapper">
-    <div class="page-header">
-        <h3 class="page-title"> Form elements </h3>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Form elements</li>
-            </ol>
-        </nav>
-    </div>
+
     <div class="row">
 
 
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Basic form elements</h4>
-                    <p class="card-description"> Basic form elements </p>
+                    <h4 class="card-title">Slider Yükle</h4>
+
                     <form class="forms-sample">
                         <div class="form-group">
-                            <label for="exampleInputName1">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                            <label for="exampleInputName1">Slider Adı</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" alt="$name">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword4">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleSelectGender">Gender</label>
-                            <select class="form-control" id="exampleSelectGender">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
+
                         <div class="form-group">
                             <label>File upload</label>
                             <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
@@ -68,8 +47,8 @@ include("inc/head.php")
                             <label for="exampleTextarea1">Textarea</label>
                             <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-dark">Cancel</button>
+                        <button type="submit" class="btn btn-primary mr-2">Yükle</button>
+                        <button class="btn btn-dark">Vazgeç</button>
                     </form>
                 </div>
             </div>
