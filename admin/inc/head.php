@@ -15,6 +15,7 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
