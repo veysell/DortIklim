@@ -118,13 +118,13 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
             <span class="menu-icon">
               <i class="mdi mdi-laptop"></i>
             </span>
-            <span class="menu-title">Arayüz Elemanları</span>
+            <span class="menu-title">Medya</span>
             <i class="menu-arrow"></i>
           </a>
           <div class="collapse" id="ui-basic">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="buttons">Butonlar</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Açılır Menüler</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listSlider">Sliderlar</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listBanner">Bannerlar</a></li>
               <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Tipografi</a></li>
             </ul>
           </div>
@@ -135,6 +135,7 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
               <i class="mdi mdi-playlist-play"></i>
             </span>
             <span class="menu-title">Slider Yükle</span>
+            
           </a>
         </li>
         <li class="nav-item menu-items">
@@ -185,14 +186,6 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
               <i class="mdi mdi-file-document-box"></i>
             </span>
             <span class="menu-title">Dokümantasyon</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="forget">
-            <span class="menu-icon">
-              <i class="mdi mdi-key-variant"></i>
-            </span>
-            <span class="menu-title">Şifremi Unuttum</span>
           </a>
         </li>
       </ul>
