@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
-   header("location:login.php");
+   header("location:login");
 }
 ?>
 <!DOCTYPE html>
@@ -227,7 +227,7 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
+                <a href="logout" class="dropdown-item preview-item">
 
                 <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
@@ -236,7 +236,7 @@ if(!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"]=="6789") ){
                       </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Log out</p>
+                    <p class="preview-subject mb-1">Çıkış Yap</p>
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
