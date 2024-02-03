@@ -20,17 +20,17 @@ include("inc/head.php")
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Slider Ekle</h4>
+                        <h4 class="card-title">Banner Ekle</h4>
                         
 
                         <form class="forms-sample">
                             <div class="form-group">
-                                <label for="exampleInputName1">Slider Adı</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Slider İsmi Giriniz...">
+                                <label for="exampleInputName1">Banner Adı</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Banner İsmi Giriniz...">
                             </div>
 
                             <div class="form-group">
-                                <label>Slider Resmi</label>
+                                <label>Banner Resmi</label>
                                 <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükleyiniz">
@@ -41,8 +41,8 @@ include("inc/head.php")
                                 <div id="previewContainer"></div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleTextarea1">Slider Metni</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Slider alanında görünecek metni giriniz..."></textarea>
+                                <label for="exampleTextarea1">Banner Metni</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Banner alanında görünecek metni giriniz..."></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary mr-2">Yükle</button>
