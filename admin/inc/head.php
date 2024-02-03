@@ -25,7 +25,6 @@
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
@@ -41,13 +40,10 @@
             /* Düğme arkaplan rengini şeffaf (transparent) yapar */
           }
         </style>
-
         <!-- ... diğer HTML kodları ... -->
-
         <button class="navbar-toggler navbar-toggler align-self-center custom-button" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
-
       </div>
       <ul class="nav">
         <li class="nav-item profile">
@@ -69,17 +65,17 @@
                   <div class="preview-icon bg-dark rounded-circle">
                     <i class="mdi mdi-settings text-primary"></i>
                   </div>
-                </div>
+                  </div>
                 <div class="preview-item-content">
                   <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                </div>
+                  </div>
               </a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-dark rounded-circle">
                     <i class="mdi mdi-onepassword  text-info"></i>
-                  </div>
+                    </div>
                 </div>
                 <div class="preview-item-content">
                   <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
@@ -90,7 +86,7 @@
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-dark rounded-circle">
                     <i class="mdi mdi-calendar-today text-success"></i>
-                  </div>
+                    </div>
                 </div>
                 <div class="preview-item-content">
                   <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
@@ -203,7 +199,6 @@
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <ul class="navbar-nav navbar-nav-right">
-
             <li class="nav-item dropdown">
               <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                 <div class="navbar-profile">
@@ -216,25 +211,27 @@
                 <h6 class="p-3 mb-0">Profile</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
+                <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-success"></i>
-                    </div>
+                      </div>
                   </div>
                   <div class="preview-item-content">
                     <p class="preview-subject mb-1">Settings</p>
-                  </div>
+                    </div>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
+
+                <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-logout text-danger"></i>
-                    </div>
+
+                      </div>
                   </div>
                   <div class="preview-item-content">
                     <p class="preview-subject mb-1">Log out</p>
-                  </div>
+                    </div>
                 </a>
                 <div class="dropdown-divider"></div>
                 <p class="p-3 mb-0 text-center">Advanced settings</p>
@@ -246,3 +243,5 @@
           </button>
         </div>
       </nav>
+
+
