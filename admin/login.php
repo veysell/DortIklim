@@ -43,64 +43,65 @@
                 </div>
                 <div class="form-group">
                   <label>Şifre</label>
-                  <input type="password" name="txtUserPass" required class="form-control p_input">
+                  <input type="password" name="txtUserPass" id="pass" required class="form-control p_input">
                 </div>
+
                 <div class="form-group d-flex align-items-center justify-content-between">
-                  <!-- <div class="form-check">
+                  <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input"> Remember me </label>
-                  </div> -->
+                      <input type="checkbox" class="form-check-input" id="showPassword" onchange="togglePasswordVisibility()"> Şifreyi göster <i class="input-helper"></i></label>
+                  </div>
                   <a href="forget" class="forgot-pass">Şifremi Unuttum</a>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary btn-block enter-btn">Giriş</button>
                 </div>
-                <!-- <div class="d-flex">
+            </div>
+
+            <!-- <div class="d-flex">
                   <button class="btn btn-facebook mr-2 col">
                     <i class="mdi mdi-facebook"></i> Facebook </button>
                   <button class="btn btn-google col">
                     <i class="mdi mdi-google-plus"></i> Google plus </button>
                 </div>
                 <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p> -->
-                
-              </form>
-              <?php
+
+            </form>
+            <?php
 
 
-              if ($_POST) {
-                $name = $_POST["txtUserName"];
-                $pass = $_POST["txtUserPass"];
-                $sorgu = $baglanti->prepare("select * from user where Name=:userName");
-                $sorgu->execute(['userName' => htmlspecialchars($name)]);
-                $sonuc = $sorgu->fetch();
-                
-                if ($sonuc!=null){
-                  if(($pass==$sonuc['Password'])){
-                      $_SESSION["Oturum"] = 6789;
-                      $_SESSION["usernaname"] = $username;
-                      $_SESSION["Name"] = $sonuc["Name"];
-                      $_SESSION["Surname"] = $sonuc["Surname"];
-                      $_SESSION["role"] = ($sonuc["Role"]===1)?"Super Admin":"Admin";
-                      header("location:index");
-                  }
-                  else{
-                      echo 'Şifrenizi Kontrol Ediniz';
-                  }
-                 }
-                 else{
-                  echo "Kayıt Bulunamadı";
-                 }
+            if ($_POST) {
+              $name = $_POST["txtUserName"];
+              $pass = $_POST["txtUserPass"];
+              $sorgu = $baglanti->prepare("select * from user where Name=:userName");
+              $sorgu->execute(['userName' => htmlspecialchars($name)]);
+              $sonuc = $sorgu->fetch();
+
+              if ($sonuc != null) {
+                if (($pass == $sonuc['Password'])) {
+                  $_SESSION["Oturum"] = 6789;
+                  $_SESSION["usernaname"] = $username;
+                  $_SESSION["Name"] = $sonuc["Name"];
+                  $_SESSION["Surname"] = $sonuc["Surname"];
+                  $_SESSION["role"] = ($sonuc["Role"] === 1) ? "Super Admin" : "Admin";
+                  header("location:index");
+                } else {
+                  echo 'Şifrenizi Kontrol Ediniz';
+                }
+              } else {
+                echo "Kayıt Bulunamadı";
               }
+            }
 
-              ?>
-            </div>
+            ?>
           </div>
         </div>
-        <!-- content-wrapper ends -->
       </div>
-      <!-- row ends -->
+      <!-- content-wrapper ends -->
     </div>
-    <!-- page-body-wrapper ends -->
+    <!-- row ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
@@ -114,7 +115,17 @@
   <script src="assets/js/misc.js"></script>
   <script src="assets/js/settings.js"></script>
   <script src="assets/js/todolist.js"></script>
-  
+  <script>
+    function togglePasswordVisibility() {
+      console.log("test");
+      var showPasswordCheckbox = document.getElementById("showPassword");
+      var passwordField = document.getElementById("pass");
+
+      // Checkbox durumuna göre şifre görünürlüğünü ayarla
+      passwordField.type = showPasswordCheckbox.checked ? "text" : "password";
+    }
+  </script>
+
 
   <!-- endinject -->
 </body>
