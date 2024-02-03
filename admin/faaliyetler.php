@@ -19,32 +19,26 @@ include("inc/head.php")
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                   <h4 class="card-title d-flex justify-content-between align-items-center">Slider Listesi <button type="button" class="btn btn-success btn-fw ml-5">
-                    <a href="addSlider">Slider Ekle</button></a>
+                   <h4 class="card-title d-flex justify-content-between align-items-center">Faaliyetlerimiz <button type="button" class="btn btn-success btn-fw ml-5">
+                    <a href="addFaaliyet">Faaliyet Ekle</button></a>
                     </h4>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>İsim</th>
-                                    <th>Metin</th>
-                                    <th>Resim</th>
-                                    <th>Durum</th>
+                                    <th>Kişi</th>
+                                    <th>Faaliyet Tipi</th>
+                                    <th>Ülke/Bölge</th>
+                                    <th>Sayısı</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Jacob</td>
-                                    <td>
-                                        <div class="mb-1 mb-sm-0 multiline">Join The Movement sdfsdfsdvsdvsdvsdfvsdvTo end Child Poverty</div>
-                                    </td>
-                                    <td style="vertical-align: middle;">
-                                        <a href="editSlider">
-                                            <img src="../images/hero_1.jpg" style="width: 200px; height: 120px; margin-top: 20px; border-radius: 10px; align:center;">
-                                        </a>
-                                    </td>
+                                    <td>John</td>
+                                    <td>Premier</td>
+                                    <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
                                     <td>
                                         <div class="form-check form-check-success">
                                             <input type="checkbox" class="form-check-input" id="statusCheckbox" onclick="toggleStatus(this)" checked>
@@ -52,22 +46,16 @@ include("inc/head.php")
                                         </div>
                                     </td>
                                     <td>
-                                        <a class="badge badge-warning" href="editSlider">Düzenle</a>
+                                        <button type="button" class="badge badge-warning">Düzenle</button>
                                     </td>
                                     <td>
                                         <button type="button" class="badge badge-danger">Sil</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Jacob</td>
-                                    <td>
-                                        <div class="mb-1 mb-sm-0 multiline">Join The Movement end Child Poverty</div>
-                                    </td>
-                                    <td style="vertical-align: middle;">
-                                        <a href="editSlider">
-                                            <img src="../images/hero_2.jpg" style="width: 200px; height: 120px; margin-top: 20px; border-radius: 10px; align:center;">
-                                        </a>
-                                    </td>
+                                    <td>John</td>
+                                    <td>Premier</td>
+                                    <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
                                     <td>
                                         <div class="form-check form-check-success">
                                             <input type="checkbox" class="form-check-input" id="statusCheckbox" onclick="toggleStatus(this)" checked>
@@ -75,7 +63,7 @@ include("inc/head.php")
                                         </div>
                                     </td>
                                     <td>
-                                        <a class="badge badge-warning" href="editSlider">Düzenle</a>
+                                        <button type="button" class="badge badge-warning">Düzenle</button>
                                     </td>
                                     <td>
                                         <button type="button" class="badge badge-danger">Sil</button>

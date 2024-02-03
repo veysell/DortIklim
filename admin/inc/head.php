@@ -33,6 +33,10 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
 
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+
+
+
 </head>
 
 <body>
@@ -136,11 +140,12 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
           </div>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" href="addSlider">
+          <a class="nav-link" href="faaliyetler">
             <span class="menu-icon">
               <i class="mdi mdi-playlist-play"></i>
             </span>
-            <span class="menu-title">Slider Yükle</span>
+            <span class="menu-title">Faaliyetler
+            </span>
             
           </a>
         </li>
