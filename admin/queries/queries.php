@@ -3,16 +3,17 @@
 
 include('database/connection.php');
 
-function getAllData($table) {
+function getAllData($table)
+{
     global $baglanti;
 
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT * FROM $table order by  CreatedDate desc";
     $query = $baglanti->prepare($sql);
     $query->execute();
     $data = array();
-    
+
     if ($query->rowCount() > 0) {
-        while($row = $query->fetch()) {
+        while ($row = $query->fetch()) {
             $data[] = $row;
         }
     }
@@ -20,13 +21,70 @@ function getAllData($table) {
     return $data;
 }
 
-function insertSlider($name, $desc, $active, $uid) {
+function deleteById($id, $table)
+{
     global $baglanti;
-    $date=date("Y-m-d");
+
+    $sql = "DELETE FROM $table WHERE Id = :id";
+
+  
+    $query = $baglanti->prepare($sql);
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+
+   $result=$query->execute();
+
+    return $result;
+}
+
+
+function getById($id, $table)
+{
+    global $baglanti;
+
+    $sql = "SELECT * FROM $table WHERE Id = :id";
+    $query = $baglanti->prepare($sql);
+
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+
+    $query->execute();
+
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updateSlider($id, $name, $desc, $active, $url)
+{
+    global $baglanti;
+    if ($url == "null") {
+        $sql = "UPDATE slider SET Name=:name, Description=:desc, IsActive=:active WHERE Id = :id";
+    } else {
+        $sql = "UPDATE slider SET Name=:name, Description=:desc, ImagePath=:url, IsActive=:active WHERE Id = :id";
+    }
+
+    $query = $baglanti->prepare($sql);
+
+    // Parametreleri bind et
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->bindParam(':name', $name);
+    $query->bindParam(':desc', $desc);
+    if ($url != "null") {
+        $query->bindParam(':url', $url);
+    }
+    $query->bindParam(':active', $active, PDO::PARAM_INT);
+
+    $result = $query->execute();
+    return $result;
+
+}
+function insertSlider($name, $desc, $active, $uid)
+{
+    global $baglanti;
+    $date = date("Y-m-d H:i:s");
     // Diğer sütunları ekleyin...
-	
+
     $query = "INSERT INTO slider (Name, Description,IsActive,ImagePath,CreatedDate) VALUES ('$name', '$desc','$active','$uid','$date')";
-    $result=$baglanti->prepare($query);
+    $result = $baglanti->prepare($query);
     $result->execute();
     if ($result) {
         return true;
@@ -35,16 +93,17 @@ function insertSlider($name, $desc, $active, $uid) {
     }
 }
 
-function getUserInfo($userName, $password) {
+function getUserInfo($userName, $password)
+{
     global $conn;
     echo $conn;
-    echo $userName."--".$password."";
+    echo $userName . "--" . $password . "";
     // Önce kullanıcının adını kullanarak veritabanından bilgileri çekelim
     $stmt = $conn->prepare("SELECT * FROM user WHERE Name = ?");
     $stmt->bind_param("s", $userName);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
         // Kullanıcı adı doğru, şimdi şifreyi kontrol edelim
         $user = $result->fetch_assoc();

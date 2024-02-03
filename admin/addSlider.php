@@ -29,7 +29,7 @@ include("inc/head.php");
                             $name = $_POST["sliderName"];
                             $desc = $_POST["sliderDesc"];
 
-                            $active = ($_POST["isActive"] == 'on') ? 1 : 0;
+                            $active = (isset($_POST["isActive"]) == '') ? 0 : 1;
 
 
 
@@ -53,9 +53,11 @@ include("inc/head.php");
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                         echo "<script> Swal.fire({
                                                         icon: 'success',
-                                                        title: 'Tebrikss',
-                                                        text: 'Aferin amınagoyum',
+                                                        title: 'Başarılı',
+                                                        text: 'Slider eklendi',
                                                     })</script>";
+                                        echo '<script>window.location.href = "listSlider";</script>';
+                                        exit();
                                     } else {
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                         echo "<script> Swal.fire({
@@ -82,7 +84,7 @@ include("inc/head.php");
                         <form class="forms-sample" method="post" action="addSlider" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleInputName1">Slider Adı</label>
-                                <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
+                                <input type="text" required class="form-control" name="sliderName" id="exampleInputName1"
                                     placeholder="Slider İsmi Giriniz...">
                             </div>
 
@@ -100,7 +102,7 @@ include("inc/head.php");
                                 <input type="file" id="sliderImage" required name="Url" class="file-upload-default"
                                     onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled
+                                    <input type="text" class="form-control file-upload-info" required disabled
                                         placeholder="Resim Yükle">
                                     <span class="input-group-append">
                                         <button class="file-upload-browse btn btn-primary" type="button">Dosya
