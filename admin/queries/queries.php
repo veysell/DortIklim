@@ -1,18 +1,18 @@
 <?php
-// admin/inc/queries.php
 
-include_once('database/connection.php');
 
-function getAllData() {
-    global $conn;
+include('database/connection.php');
 
-    $sql = "SELECT * FROM tablo_adı";
-    $result = $conn->query($sql);
+function getAllData($table) {
+    global $baglanti;
 
+    $sql = "SELECT * FROM $table";
+    $query = $baglanti->prepare($sql);
+    $query->execute();
     $data = array();
-
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+    
+    if ($query->rowCount() > 0) {
+        while($row = $query->fetch()) {
             $data[] = $row;
         }
     }
@@ -20,16 +20,15 @@ function getAllData() {
     return $data;
 }
 
-function insertData($data) {
-    global $conn;
-
-    $column1 = $data['column1'];
-    $column2 = $data['column2'];
+function insertSlider($name, $desc, $active, $uid) {
+    global $baglanti;
+    $date=date("Y-m-d");
     // Diğer sütunları ekleyin...
-
-    $sql = "INSERT INTO tablo_adı (column1, column2) VALUES ('$column1', '$column2')";
-    
-    if ($conn->query($sql) === TRUE) {
+	
+    $query = "INSERT INTO slider (Name, Description,IsActive,ImagePath,CreatedDate) VALUES ('$name', '$desc','$active','$uid','$date')";
+    $result=$baglanti->prepare($query);
+    $result->execute();
+    if ($result) {
         return true;
     } else {
         return false;
