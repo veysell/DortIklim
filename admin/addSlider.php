@@ -44,9 +44,12 @@ include("inc/head.php")
                                 <label for="exampleTextarea1">Slider Metni</label>
                                 <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Slider alanında görünecek metni giriniz..."></textarea>
                             </div>
-
-                            <button type="submit" class="btn btn-primary mr-2">Yükle</button>
-                            <button class="btn btn-danger">Vazgeç</button>
+                            <div class="form-check form-check-success mb-4">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" checked=""> Aktif <i class="input-helper"></i></label>
+                            </div>
+                            <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
+                            <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
                         </form>
                     </div>
                 </div>
