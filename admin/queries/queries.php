@@ -27,11 +27,11 @@ function deleteById($id, $table)
 
     $sql = "DELETE FROM $table WHERE Id = :id";
 
-  
+
     $query = $baglanti->prepare($sql);
     $query->bindParam(':id', $id, PDO::PARAM_INT);
 
-   $result=$query->execute();
+    $result = $query->execute();
 
     return $result;
 }
@@ -125,7 +125,7 @@ function getUserInfo($userName, $password)
     $stmt->close();
 }
 
-function insertBlog($name, $desc, $active, $uid,$date,$title)
+function insertBlog($name, $desc, $active, $uid, $date, $title)
 {
     global $baglanti;
     $createdDate = date("Y-m-d H:i:s");
@@ -142,3 +142,64 @@ function insertBlog($name, $desc, $active, $uid,$date,$title)
 }
 
 
+function updateBlog($id, $desc, $active, $url, $date, $title)
+{
+    global $baglanti;
+
+    $sql = "UPDATE blog SET Description=:desc,Date=:date ,Title=:title, ImagePath=:url, IsActive=:active WHERE Id = :id";
+
+
+    $query = $baglanti->prepare($sql);
+
+    // Parametreleri bind et
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->bindParam(':desc', $desc);
+    $query->bindParam(':active', $active);
+    $query->bindParam(':url', $url);
+    $query->bindParam(':date', $date);
+    $query->bindParam(':title', $title);
+
+    $query->bindParam(':active', $active, PDO::PARAM_INT);
+
+    $result = $query->execute();
+    return $result;
+}
+
+function insertBanner($name, $desc, $active, $url)
+{
+    global $baglanti;
+
+    $createdDate = date("Y-m-d H:i:s");
+    // Diğer sütunları ekleyin...
+    $query = "INSERT INTO banner (Name,IsActive,ImagePath,CreatedDate,Description) VALUES ('$name','$active','$url','$createdDate','$desc')";
+    $result = $baglanti->prepare($query);
+    $result->execute();
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function updateBanner($id, $name, $desc, $active, $url)
+{
+    global $baglanti;
+
+    $sql = "UPDATE banner SET Description=:desc, Name=:name, ImagePath=:url, IsActive=:active WHERE Id = :id";
+
+
+    $query = $baglanti->prepare($sql);
+
+    // Parametreleri bind et
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->bindParam(':desc', $desc);
+    $query->bindParam(':name', $name);
+    $query->bindParam(':active', $active);
+    $query->bindParam(':url', $url);
+
+
+    $query->bindParam(':active', $active, PDO::PARAM_INT);
+
+    $result = $query->execute();
+    return $result;
+}
