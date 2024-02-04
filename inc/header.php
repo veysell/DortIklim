@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Fundraiser &mdash; Website Template by Colorlib</title>
+    <title>4 İklim İnsanî Yardım Vakfı</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,18 +38,13 @@
             </div>
             <div class="site-mobile-menu-body"></div>
         </div>
-
-
-
-
-
         <div class="bg-primary py-3 top-bar shadow d-none d-md-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-md-left pl-0">
                         <a href="#" class=" pr-3 pl-0">Home</a>
                         <a href="#" class="p-3">Events</a>
-                        <a href="uyeOl.php" class="p-3">Become A Volunteer</a>
+                        <a href="Membership.php" class="p-3">Become A Volunteer</a>
                     </div>
                     <div class="col-md-6 text-md-right">
                         <a href="#" class="p-3"><span class="icon-twitter"></span></a>
@@ -65,9 +60,10 @@
 
 
                     <div class="site-logo">
-                        <a href="home" class="text-white">4Iklim</a>
+                        <a href="home">
+                            <img src="images/logo1.png" alt="4Iklim Logo" width="250px">
+                        </a>
                     </div>
-
 
                     <nav class="site-navigation text-left ml-auto" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
@@ -80,9 +76,7 @@
                     </nav>
 
 
-                    <div class="ml-auto toggle-button d-inline-block d-lg-none"><a href="#"
-                            class="site-menu-toggle py-5 js-menu-toggle text-white"><span
-                                class="icon-menu h3 text-white"></span></a></div>
+                    <div class="ml-auto toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-white"><span class="icon-menu h3 text-white"></span></a></div>
 
 
 
