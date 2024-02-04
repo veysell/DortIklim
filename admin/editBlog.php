@@ -16,7 +16,7 @@ include("inc/head.php")
         <div class="content-wrapper">
 
             <div class="page-header">
-                <h2> Blog Yaz </h2>
+                <h2> Bloğunuzu Düzenleyin </h2>
                 <nav aria-label="breadcrumb">
 
                 </nav>
@@ -29,15 +29,11 @@ include("inc/head.php")
                             <p class="card-description">Kelimelerinle dünyana dokun, bir blog yazmaya başla!</p>
                             <form class="forms-sample">
                                 <div class="form-group">
-                                    <label for="exampleInputName1">Yazar</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Yazar ismi">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Başlık</label>
+                                    <label for="exampleInputEmail3">Yeni Başlık</label>
                                     <input type="tex" class="form-control" id="exampleInputEmail3" placeholder="Blog başlığı">
                                 </div>
                                 <div class="form-group">
-                                <label for="blogImage">Blog Resmi <i style="font-size: 90%; color: #6c7293;">(Blog
+                                <label for="blogImage">Yeni Blog Resmi <i style="font-size: 90%; color: #6c7293;">(Blog
                                         resmi en az 150x150 boyutunda olmalıdır!)</i></label>
                                 <input type="file" id="blogImage" required name="Url" class="file-upload-default"
                                     onchange="previewImage(event)">
@@ -52,7 +48,7 @@ include("inc/head.php")
                                 <div id="previewContainer"></div>
                             </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword4">Yayın Tarihi</label>
+                                    <label for="exampleInputPassword4">Güncellenme Tarihi</label>
                                     <input type="date" class="form-control" id="exampleInputPassword4" placeholder="Password">
                                     </div>
                                         <div class="form-group">
@@ -63,8 +59,8 @@ include("inc/head.php")
                                     
                                     <div>
 
-                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-dark">Cancel</button>
+                                        <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                                        <a href="listBlog" class="btn btn-dark">Vazgeç</a>
 
                                     </div>
 

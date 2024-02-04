@@ -3,7 +3,7 @@ include_once("queries/queries.php");
 include("functions/function.php");
 include("inc/head.php")
 
-    ?>
+?>
 <style>
     img {
         max-width: 300px;
@@ -37,19 +37,18 @@ include("inc/head.php")
                         $active = 1;
                         if ($_FILES["Url"]["error"] != 4) {
                             $importResult = importImageFile($_FILES);
-                            $url = $importResult == false ? $sonuc["ImageUrl"] : $importResult;
+                            $url = $importResult == false ? "" : $importResult;
                         } else {
-                            $url = $sonuc["ImageUrl"];
+                            $url = "";
                         }
                         $result = insertBlog($name, $desc, $active, $url, $date, $title);
                         if ($result) {
                             messageSuccess();
-                            echo '<script>window.location.href = "listSlider";</script>';
+                            echo '<script>window.location.href = "listblog";</script>';
                             exit();
                         } else {
                             messageError();
                         }
-
                     } else {
                         //messageWarning();
                     }
@@ -65,22 +64,18 @@ include("inc/head.php")
                             <form class="forms-sample" method="post" action="addBlog" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleInputName1">Yazar</label>
-                                    <input name="name" type="text" class="form-control" id="exampleInputName1"
-                                        placeholder="Yazar ismi">
+                                    <input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Yazar ismi">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Başlık</label>
-                                    <input name="title" type="text" class="form-control" id="exampleInputEmail3"
-                                        placeholder="Blog başlığı">
+                                    <input name="title" type="text" class="form-control" id="exampleInputEmail3" placeholder="Blog başlığı">
                                 </div>
                                 <div class="form-group">
-                                    <label for="sliderImage">Blog Resmi <i style="font-size: 90%; color: #6c7293;">(Blog
+                                    <label for="blogImage">Blog Resmi <i style="font-size: 90%; color: #6c7293;">(Blog
                                             resmi en az 150x150 boyutunda olmalıdır!)</i></label>
-                                    <input type="file" id="sliderImage" required name="Url" class="file-upload-default"
-                                        onchange="previewImage(event)">
+                                    <input type="file" id="blogImage" required name="Url" class="file-upload-default" onchange="previewImage(event)">
                                     <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled
-                                            placeholder="Resim Yükle">
+                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
                                         <span class="input-group-append">
                                             <button class="file-upload-browse btn btn-primary" type="button">Dosya
                                                 Seç</button>
@@ -90,20 +85,18 @@ include("inc/head.php")
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword4">Yayın Tarihi</label>
-                                    <input name="date" type="date" class="form-control" id="exampleInputPassword4"
-                                        placeholder="Password">
+                                    <input name="date" type="date" class="form-control" id="exampleInputPassword4" placeholder="Password">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Blog Metni</label>
-                                    <textarea name="desc" class="form-control" id="exampleTextarea1" rows="4"
-                                        placeholder="Yazmaya başlayın..."></textarea>
+                                    <textarea name="desc" class="form-control" id="exampleTextarea1" rows="4" placeholder="Yazmaya başlayın..."></textarea>
 
                                 </div>
 
                                 <div>
 
-                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                    <button class="btn btn-dark">Cancel</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                                    <a href="listBlog" class="btn btn-dark">Vazgeç</a>
 
                                 </div>
 
@@ -117,4 +110,4 @@ include("inc/head.php")
 </body>
 <?php
 include("inc/footer.php")
-    ?>
+?>
