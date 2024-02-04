@@ -45,7 +45,7 @@ include("inc/head.php")
                                     <tr>
 
                                         <td class="col-2 text-white">
-                                            <?= $slider["Name"] ?>
+                                            <?= $banner["Name"] ?>
 
                                         </td>
                                         <td class="col-3 text-white">
@@ -54,8 +54,8 @@ include("inc/head.php")
                                             </div>
                                         </td>
                                         <td class="col-3 text-white">
-                                            <a href="editBanner?id=<?= $slider["Id"] ?>">
-                                                <img src="../images/<?= $slider["ImagePath"] ?>"
+                                            <a href="editBanner?id=<?= $banner["Id"] ?>">
+                                                <img src="../images/<?= $banner["ImagePath"] ?>"
 
                                                     style="width: 100px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
