@@ -1,70 +1,99 @@
 <?php
+include_once("queries/queries.php");
 include("inc/head.php")
-?>
-
+    ?>
+<style>
+    .multiline {
+        white-space: nowrap;
+        /* Satır sonu karakterlerini yok sayar */
+        overflow: hidden;
+        /* Taşan içeriği gizler */
+        text-overflow: ellipsis;
+        /* Taşan içeriği üç nokta (...) ile gösterir */
+        max-width: 200px;
+        /* Belirli bir genişlikte keser */
+    }
+</style>
 <!-- partial -->
 <div class="main-panel">
-<div class="content-wrapper">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between align-items-center">Banner Listesi
+                        <a class="btn btn-primary btn-icon-text" href="addBanner">Banner Ekle</a>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-2">İsim</th>
+                                    <th class="col-5">Metin</th>
+                                    <th class="col-2">Resim</th>
+                                    <th class="col-1">Durum</th>
+                                    <th class="col-1"></th>
+                                    <th class="col-1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sliders = getAllData("slider");
+                                foreach ($sliders as $slider) {
+                                    ?>
 
-    <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Hoverable Table</h4>
-                <p class="card-description"> Add class <code>.table-hover</code>
-                </p>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>Product</th>
-                                <th>Sale</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Photoshop</td>
-                                <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td>
-                                <td><label class="badge badge-danger">Pending</label></td>
-                            </tr>
-                            <tr>
-                                <td>Messsy</td>
-                                <td>Flash</td>
-                                <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-                                <td><label class="badge badge-warning">In progress</label></td>
-                            </tr>
-                            <tr>
-                                <td>John</td>
-                                <td>Premier</td>
-                                <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
-                                <td><label class="badge badge-info">Fixed</label></td>
-                            </tr>
-                            <tr>
-                                <td>Peter</td>
-                                <td>After effects</td>
-                                <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
-                                <td><label class="badge badge-success">Completed</label></td>
-                            </tr>
-                            <tr>
-                                <td>Dave</td>
-                                <td>53275535</td>
-                                <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
-                                <td><label class="badge badge-warning">In progress</label></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <tr>
+                                        <td class="col-2">
+                                            <?= $slider["Name"] ?>
+                                        </td>
+                                        <td class="col-5">
+                                            <div class="mb-1 mb-sm-0 multiline">
+                                                <?= $slider["Description"] ?>
+                                            </div>
+                                        </td>
+                                        <td class="col-2">
+                                            <a href="editBanner?id=<?= $slider["Id"] ?>">
+                                                <img src="../images/<?= $slider["ImagePath"] ?>"
+                                                    style="width: 100px; height: 90px; border-radius: 10px; align:center;">
+                                            </a>
+                                        </td>
+                                        <td class="col-1">
+                                            <label
+                                                class="<?= $slider["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>"
+                                                for="statusCheckbox">
+                                                <?= $slider["IsActive"] == "1" ? "Aktif" : "Pasif" ?>
+                                            </label>
+                                        </td>
+                                        <td class="col-1">
+                                            <a class="btn badge badge-warning"
+                                                href='editBaner?id=<?= $slider["Id"] ?>'>Düzenle</a>
+                                        </td>
+                                        <td class="col-1">
+                                            <a href="delete?id=<?=$slider["Id"]?>&table=slider"
+                                                class="btn badge badge-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                                            <?php
+                                            ?>
+                                        </td>
+                                    </tr>
+
+
+                                    <?php
+                                }
+                                ?>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
             </div>
         </div>
+
     </div>
-
-</div>
-<!-- content-wrapper ends -->
-<!-- partial:../../partials/_footer.html -->
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
 
 
-<?php
-include("inc/footer.php")
-?>
+
+    <?php
+    include("inc/footer.php")
+        ?>
