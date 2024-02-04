@@ -24,7 +24,7 @@ include("inc/head.php")
                         <a class="btn btn-primary btn-icon-text" href="addBanner">Banner Ekle</a>
                     </h4>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th class="col-2">İsim</th>
@@ -37,38 +37,38 @@ include("inc/head.php")
                             </thead>
                             <tbody>
                                 <?php
-                                $sliders = getAllData("slider");
-                                foreach ($sliders as $slider) {
+                                $banners = getAllData("banner");
+                                foreach ($banners as $banner) {
                                     ?>
 
                                     <tr>
                                         <td class="col-2">
-                                            <?= $slider["Name"] ?>
+                                            <?= $banner["Name"] ?>
                                         </td>
                                         <td class="col-4 tekt-white">
                                             <div class="mb-1 mb-sm-0 multiline">
-                                                <?= $slider["Description"] ?>
+                                                <?= $banner["Description"] ?>
                                             </div>
                                         </td>
                                         <td class="col-2 tekt-white">
-                                            <a href="editBanner?id=<?= $slider["Id"] ?>">
-                                                <img src="../images/<?= $slider["ImagePath"] ?>"
+                                            <a href="editBanner?id=<?= $banner["Id"] ?>">
+                                                <img src="../images/<?= $banner["ImagePath"] ?>"
                                                     style="width: 100px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
                                         </td>
                                         <td class="col-2">
                                             <label
-                                                class="<?= $slider["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>"
+                                                class="<?= $banner["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>"
                                                 for="statusCheckbox">
-                                                <?= $slider["IsActive"] == "1" ? "Aktif" : "Pasif" ?>
+                                                <?= $banner["IsActive"] == "1" ? "Aktif" : "Pasif" ?>
                                             </label>
                                         </td>
                                         <td class="col-1">
                                             <a class="btn badge badge-warning"
-                                                href='editBaner?id=<?= $slider["Id"] ?>'>Düzenle</a>
+                                                href='editBanner?id=<?= $banner["Id"] ?>'>Düzenle</a>
                                         </td>
                                         <td class="col-1">
-                                            <a href="delete?id=<?=$slider["Id"]?>&table=slider"
+                                            <a href="delete?id=<?=$banner["Id"]?>&table=banner"
                                                 class="btn badge badge-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
                                             <?php
                                             ?>
