@@ -24,7 +24,7 @@ include("inc/head.php")
                         <a class="btn btn-primary btn-icon-text" href="addSlider">Slider Ekle</a>
                     </h4>
                     <div class="table-responsive">
-                        <table class="table">
+                    <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th class="col-2">İsim</th>
@@ -42,18 +42,18 @@ include("inc/head.php")
                                     ?>
 
                                     <tr>
-                                        <td class="col-2">
+                                        <td class="col-2 text-white">
                                             <?= $slider["Name"] ?>
                                         </td>
-                                        <td class="col-5">
+                                        <td class="col-4 text-white">
                                             <div class="mb-1 mb-sm-0 multiline">
                                                 <?= $slider["Description"] ?>
                                             </div>
                                         </td>
-                                        <td class="col-2">
+                                        <td class="col-3">
                                             <a href="editSlider?id=<?= $slider["Id"] ?>">
                                                 <img src="../images/<?= $slider["ImagePath"] ?>"
-                                                    style="width: 100px; height: 90px; border-radius: 10px; align:center;">
+                                                    style="width: 150px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
                                         </td>
                                         <td class="col-1">

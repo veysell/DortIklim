@@ -45,18 +45,18 @@ include("inc/head.php")
                                         <td class="col-2">
                                             <?= $slider["Name"] ?>
                                         </td>
-                                        <td class="col-5">
+                                        <td class="col-4 tekt-white">
                                             <div class="mb-1 mb-sm-0 multiline">
                                                 <?= $slider["Description"] ?>
                                             </div>
                                         </td>
-                                        <td class="col-2">
+                                        <td class="col-2 tekt-white">
                                             <a href="editBanner?id=<?= $slider["Id"] ?>">
                                                 <img src="../images/<?= $slider["ImagePath"] ?>"
                                                     style="width: 100px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
                                         </td>
-                                        <td class="col-1">
+                                        <td class="col-2">
                                             <label
                                                 class="<?= $slider["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>"
                                                 for="statusCheckbox">
