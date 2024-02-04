@@ -69,7 +69,7 @@ include("inc/head.php")
                                         </td>
                                         <td class="col-1">
                                             <a href="delete?id=<?=$slider["Id"]?>&table=slider"
-                                                class="btn badge badge-danger" onclick="return confirm('Are you sure you want to delete this item')">Sil</a>
+                                                class="btn badge badge-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
                                             <?php
                                             ?>
                                         </td>

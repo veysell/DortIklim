@@ -115,6 +115,7 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
         <li class="nav-item nav-category">
           <span class="nav-link">Yönlendirme</span>
         </li>
+       
         <li class="nav-item menu-items">
           <a class="nav-link" href="index">
             <span class="menu-icon">
@@ -124,20 +125,20 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
           </a>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <a class="nav-link" href="listSlider">
             <span class="menu-icon">
-              <i class="mdi mdi-laptop"></i>
+              <i class="mdi mdi-access-point"></i>
             </span>
-            <span class="menu-title">Medya</span>
-            <i class="menu-arrow"></i>
+            <span class="menu-title">Sliderlar</span>
           </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="listSlider">Sliderlar</a></li>
-              <li class="nav-item"> <a class="nav-link" href="listBanner">Bannerlar</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Tipografi</a></li>
-            </ul>
-          </div>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="listBanner">
+            <span class="menu-icon">
+              <i class="mdi mdi-access-point"></i>
+            </span>
+            <span class="menu-title">Bannerlar</span>
+          </a>
         </li>
         <li class="nav-item menu-items">
           <a class="nav-link" href="listBlog">

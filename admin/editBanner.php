@@ -5,7 +5,7 @@ include("inc/head.php");
 if (isset($_GET["id"])) {
 
     $id = $_GET["id"];
-    $resultdata = getById($id, "slider");
+    $resultdata = getById($id, "banner");
     $IsActive = $resultdata["IsActive"] == "1" ? true : false;
 }
 ?>
@@ -29,7 +29,7 @@ if (isset($_GET["id"])) {
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Slider Düzenleme</h4>
+                        <h4 class="card-title">Banner Düzenleme</h4>
                         <?php
                         if (($_POST)) {
                             $name = $_POST["sliderName"];
@@ -118,7 +118,7 @@ if (isset($_GET["id"])) {
                         <form class="forms-sample" method="post" action="editSlider" enctype="multipart/form-data">
                             <input type="text" style="display:none;" hide name="Id" value="<?= $resultdata["Id"] ?>">
                             <div class="form-group">
-                                <label for="exampleInputName1">Yeni Slider Adı</label>
+                                <label for="exampleInputName1">Yeni Banner Adı</label>
                                 <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
                                     value="<?= $resultdata["Name"] ?>">
                             </div>
@@ -133,9 +133,9 @@ if (isset($_GET["id"])) {
 
 
                             <div class="form-group">
-                                <label for="sliderImage">Yeni Slider Resmi <i
-                                        style="font-size: 90%; color: #6c7293;">(Slider
-                                        resmi en az 1280x800 boyutunda olmalıdır!)</i></label>
+                                <label for="sliderImage">Yeni Banner Resmi <i
+                                        style="font-size: 90%; color: #6c7293;">(Banner
+                                        resmi en az 250x259 boyutunda olmalıdır!)</i></label>
                                 <input type="file" id="sliderImage" name="Url" class="file-upload-default"
                                     onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
@@ -150,7 +150,7 @@ if (isset($_GET["id"])) {
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleTextarea1">Yeni Slider Metni</label>
+                                <label for="exampleTextarea1">Yeni Banner Metni</label>
                                 <textarea class="form-control" id="exampleTextarea1" name="sliderDesc" rows="4"
                                     placeholder="Slider alanında görünecek metni yeni giriniz..."><?= $resultdata["Description"] ?></textarea>
                             </div>

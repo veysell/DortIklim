@@ -13,22 +13,16 @@ include("inc/head.php")
 <!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
-
         <div class="row">
-
-
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Banner Ekle</h4>
-                        
-
-                        <form class="forms-sample">
+                             <form class="forms-sample">
                             <div class="form-group">
                                 <label for="exampleInputName1">Banner Adı</label>
                                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Banner İsmi Giriniz...">
                             </div>
-
                             <div class="form-group">
                                 <label>Banner Resmi</label>
                                 <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
