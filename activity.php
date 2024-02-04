@@ -1,5 +1,8 @@
 <?php
+include("admin/database/connection.php");
 include("inc/header.php");
+
+//$sliders = frontGetAllData("slider");
 ?>
 <div class="owl-carousel-wrapper">
 

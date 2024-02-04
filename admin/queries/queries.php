@@ -1,6 +1,6 @@
 <?php
 
-
+//$sql = "SELECT * FROM tablo_adi LIMIT 0, 4";
 include('database/connection.php');
 
 function getAllData($table)
