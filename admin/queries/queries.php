@@ -125,5 +125,20 @@ function getUserInfo($userName, $password)
     $stmt->close();
 }
 
-// Diğer CRUD işlemleri için fonksiyonları ekleyebilirsiniz.
+function insertBlog($name, $desc, $active, $uid,$date,$title)
+{
+    global $baglanti;
+    $createdDate = date("Y-m-d H:i:s");
+    // Diğer sütunları ekleyin...
+
+    $query = "INSERT INTO blog (AuthorName,IsActive,Title,ImagePath,CreatedDate,Description,Date) VALUES ('$name','$active','$title','$uid','$createdDate','$desc','$date')";
+    $result = $baglanti->prepare($query);
+    $result->execute();
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
