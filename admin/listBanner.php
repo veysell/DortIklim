@@ -24,14 +24,16 @@ include("inc/head.php")
                         <a class="btn btn-primary btn-icon-text" href="addBanner">Banner Ekle</a>
                     </h4>
                     <div class="table-responsive">
-                        <table class="table table-hover">
+
+                        <table class="table table-hover">>
+
                             <thead>
                                 <tr>
                                     <th class="col-2">İsim</th>
                                     <th class="col-5">Metin</th>
                                     <th class="col-2">Resim</th>
                                     <th class="col-1">Durum</th>
-                                    <th class="col-1"></th>
+                                    <th class="col-1">İşlemler</th>
                                     <th class="col-1"></th>
                                 </tr>
                             </thead>
@@ -41,17 +43,20 @@ include("inc/head.php")
                                 foreach ($banners as $banner) {
                                     ?>
                                     <tr>
-                                        <td class="col-2">
-                                            <?= $banner["Name"] ?>
+
+                                        <td class="col-2 text-white">
+                                            <?= $slider["Name"] ?>
+
                                         </td>
-                                        <td class="col-4 tekt-white">
+                                        <td class="col-3 text-white">
                                             <div class="mb-1 mb-sm-0 multiline">
                                                 <?= $banner["Description"] ?>
                                             </div>
                                         </td>
-                                        <td class="col-2 tekt-white">
-                                            <a href="editBanner?id=<?= $banner["Id"] ?>">
-                                                <img src="../images/<?= $banner["ImagePath"] ?>"
+                                        <td class="col-3 text-white">
+                                            <a href="editBanner?id=<?= $slider["Id"] ?>">
+                                                <img src="../images/<?= $slider["ImagePath"] ?>"
+
                                                     style="width: 100px; height: 90px; border-radius: 10px; align:center;">
                                             </a>
                                         </td>
