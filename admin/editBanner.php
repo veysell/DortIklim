@@ -1,6 +1,6 @@
 <?php
 include_once("queries/queries.php");
-
+include("functions/function.php");
 include("inc/head.php");
 if (isset($_GET["id"])) {
 
@@ -32,94 +32,37 @@ if (isset($_GET["id"])) {
                         <h4 class="card-title">Banner Düzenleme</h4>
                         <?php
                         if (($_POST)) {
-                            $name = $_POST["sliderName"];
-                            $desc = $_POST["sliderDesc"];
-                            $active = (isset($_POST["isActive"]) == '') ? 0 : 1;
-                            $imagePath = isset($_FILES["Url"]["name"]) == "" ? null : $_FILES["Url"]["name"];
                             $id = $_POST["Id"];
-                            if ($imagePath == null) {
-                                $imagePath = "null";
-                                $result = updateSlider($id, $name, $desc, $active, $imagePath);
-                                if ($result) {
-                                    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
-                                    echo "<script> Swal.fire({
-                                                        icon: 'success',
-                                                        title: 'Başarılı',
-                                                        text: 'Slider güncellendi',
-                                                    })</script>";
-                                    echo '<script>window.location.href = "listSlider";</script>';
-                                    exit();
-                                } else {
-                                    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
-                                    echo "<script> Swal.fire({
-                                                        icon: 'error',
-                                                        title: 'Hata',
-                                                        text: 'işlem başarısız oldu',
-                                                    })</script>";
+                            $name = $_POST["name"];
+                            $desc = $_POST["desc"];
+                            $active = (isset($_POST["isActive"]) == '') ? 0 : 1;
 
-                                    echo '<script>window.location.href = "listSlider";</script>';
-                                    exit();
+                            $bannerdata = getById($id, "banner");
 
-                                }
+                            if ($_FILES["Url"]["error"] != 4) {
+                                $importResult = importImageFile($_FILES);
+                                $url = $importResult == false ? $bannerdata["ImagePath"] : $importResult;
                             } else {
-
-
-                                if ($_FILES["Url"]["error"] == 4) {
-                                    $uploadOk = 0;
-                                    $url = $sonuc["ImageUrl"];
-                                } else {
-                                    $target_dir = "../images/";
-                                    $target_file = $target_dir . basename(basename($_FILES["Url"]["name"]));
-                                    $uploadOk = 1;
-                                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-                                    $url = basename($_FILES["Url"]["name"]);
-                                }
-
-                                if ($uploadOk == 1) {
-                                    if (move_uploaded_file($_FILES["Url"]["tmp_name"], $target_file)) {
-                                        $result = updateSlider($id, $name, $desc, $active, $url);
-                                        if ($result) {
-                                            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
-                                            echo "<script> Swal.fire({
-                                                            icon: 'success',
-                                                            title: 'Başarılı',
-                                                            text: 'Slider Güncellendi',
-                                                        })</script>";
-                                            echo '<script>window.location.href = "listSlider";</script>';
-                                            exit();
-
-                                        } else {
-                                            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
-                                            echo "<script> Swal.fire({
-                                                        icon: 'error',
-                                                        title: 'Hata',
-                                                        text: 'Database hatası',
-                                                    })</script>";
-                                            echo '<script>window.location.href = "listSlider";</script>';
-                                            exit();
-                                        }
-                                    } else {
-                                        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
-                                        echo "<script> Swal.fire({
-                                                        icon: 'error',
-                                                        title: 'Hata',
-                                                        text: 'Resim yüklenemedi',
-                                                    })</script>";
-                                        echo '<script>window.location.href = "listSlider";</script>';
-                                        exit();
-                                    }
-                                }
+                                $url = $bannerdata["ImagePath"];
                             }
+                            $result = updateBanner($id, $name, $desc, $active, $url);
+                            if ($result) {
+                                messageSuccess();
+                                echo '<script>window.location.href = "listBanner";</script>';
+                                exit();
+                            } else {
+                                messageError();
+                            }
+                        } else {
+                            //messageWarning();
                         }
-
                         ?>
 
-                        <form class="forms-sample" method="post" action="editSlider" enctype="multipart/form-data">
+                        <form class="forms-sample" method="post" action="editBanner" enctype="multipart/form-data">
                             <input type="text" style="display:none;" hide name="Id" value="<?= $resultdata["Id"] ?>">
                             <div class="form-group">
                                 <label for="exampleInputName1">Yeni Banner Adı</label>
-                                <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
+                                <input type="text" class="form-control" name="name" id="exampleInputName1"
                                     value="<?= $resultdata["Name"] ?>">
                             </div>
 
@@ -151,7 +94,7 @@ if (isset($_GET["id"])) {
 
                             <div class="form-group">
                                 <label for="exampleTextarea1">Yeni Banner Metni</label>
-                                <textarea class="form-control" id="exampleTextarea1" name="sliderDesc" rows="4"
+                                <textarea class="form-control" id="exampleTextarea1" name="desc" rows="4"
                                     placeholder="Slider alanında görünecek metni yeni giriniz..."><?= $resultdata["Description"] ?></textarea>
                             </div>
                             <div class="form-check form-check-success mb-4">
@@ -162,7 +105,7 @@ if (isset($_GET["id"])) {
 
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Güncelle</button>
-                            <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
+                            <a href="listBanner" class="btn btn-rounded btn-danger col-2">Vazgeç</a>
                         </form>
                     </div>
                 </div>

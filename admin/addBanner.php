@@ -1,6 +1,8 @@
 <?php
+include_once("queries/queries.php");
+include("functions/function.php");
 include("inc/head.php")
-?>
+    ?>
 
 <style>
     img {
@@ -18,25 +20,54 @@ include("inc/head.php")
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Banner Ekle</h4>
-                             <form class="forms-sample">
+                        <?php
+                        if (($_POST)) {
+                            $name = $_POST["name"];
+
+                            $desc = $_POST["desc"];
+                            $active = 1;
+                            if ($_FILES["Url"]["error"] != 4) {
+                                $importResult = importImageFile($_FILES);
+                                $url = $importResult == false ? "" : $importResult;
+                            } else {
+                                $url = "";
+                            }
+                            $result = insertBanner($name, $desc, $active, $url);
+                            if ($result) {
+                                messageSuccess();
+                                echo '<script>window.location.href = "listBanner";</script>';
+                                exit();
+                            } else {
+                                messageError();
+                            }
+                        } else {
+                            //messageWarning();
+                        }
+                        ?>
+                        <form class="forms-sample" method="post" action="addBanner" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleInputName1">Banner Adı</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Banner İsmi Giriniz...">
+                                <input type="text" class="form-control" id="exampleInputName1" name="name"
+                                    placeholder="Banner İsmi Giriniz...">
                             </div>
                             <div class="form-group">
                                 <label>Banner Resmi</label>
-                                <input type="file" name="img[]" class="file-upload-default" onchange="previewImage(event)">
+                                <input type="file" name="Url" class="file-upload-default"
+                                    onchange="previewImage(event)">
                                 <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükleyiniz">
+                                    <input type="text" class="form-control file-upload-info" disabled
+                                        placeholder="Resim Yükleyiniz">
                                     <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Dosya Seç</button>
+                                        <button class="file-upload-browse btn btn-primary" type="button">Dosya
+                                            Seç</button>
                                     </span>
                                 </div>
                                 <div id="previewContainer"></div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Banner Metni</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Banner alanında görünecek metni giriniz..."></textarea>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4" name="desc"
+                                    placeholder="Banner alanında görünecek metni giriniz..."></textarea>
                             </div>
                             
 
@@ -56,4 +87,4 @@ include("inc/head.php")
 
     <?php
     include("inc/footer.php")
-    ?>
+        ?>

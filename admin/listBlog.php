@@ -31,6 +31,7 @@ $blogs = getAllData("blog");
                                     <th>Yazar</th>
                                     <th>Başlık</th>
                                     <th>Blog Metni</th>
+                                    <th>Resim</th>
                                     <th>Görünürlük</th>
                                     <th></th>
                                     <th></th>
@@ -42,7 +43,7 @@ $blogs = getAllData("blog");
                                 foreach ($blogs as $blog) {
 
 
-                                ?>
+                                    ?>
                                     <tr>
                                         <td class="text-white">
                                             <?= $blog["AuthorName"] ?>
@@ -53,19 +54,30 @@ $blogs = getAllData("blog");
                                         <td class="text-white">
                                             <?= $blog["Description"] ?>
                                         </td>
+                                        <td>
+                                            
+                                                <img src="../images/<?= $blog["ImagePath"] ?>"
+                                                    style="width: 150px; height: 90px; border-radius: 10px; align:center;">
+                                           
+                                        </td>
                                         <td class="col-1">
-                                            <label class="<?= $blog["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>" for="statusCheckbox">
+                                            <label
+                                                class="<?= $blog["IsActive"] == "1" ? "badge badge-success" : "badge badge-danger" ?>"
+                                                for="statusCheckbox">
                                                 <?= $blog["IsActive"] == "1" ? "Aktif" : "Pasif" ?>
                                             </label>
                                         </td>
+
                                         <td>
-                                            <a class="btn badge badge-warning" href='editBlog?id=<?= $blog["Id"] ?>'>Düzenle</a>
+                                            <a class="btn badge badge-warning"
+                                                href='editBlog?id=<?= $blog["Id"] ?>'>Düzenle</a>
                                         </td>
                                         <td>
-                                            <a href="delete?id=<?= $blog["Id"] ?>&table=blog" class="btn badge badge-danger" onclick="return confirm('Silmek istediğinize emin misiniz ?')">Sil</a>
+                                            <a href="delete?id=<?= $blog["Id"] ?>&table=blog" class="btn badge badge-danger"
+                                                onclick="return confirm('Silmek istediğinize emin misiniz ?')">Sil</a>
                                         </td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                                 ?>
 
@@ -91,4 +103,4 @@ $blogs = getAllData("blog");
 
     <?php
     include("inc/footer.php")
-    ?>
+        ?>

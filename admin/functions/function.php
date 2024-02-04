@@ -3,16 +3,20 @@
 
 function importImageFile($file)
 {
-
-    $target_dir = "../images/";
-    $target_file = $target_dir . basename(basename($_FILES["Url"]["name"]));
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    $url = basename($_FILES["Url"]["name"]);
-    if (move_uploaded_file($_FILES["Url"]["tmp_name"], $target_file)) {
-        return $url;
-    } else {
+    try {
+        $target_dir = "../images/";
+        $target_file = $target_dir . basename(basename($_FILES["Url"]["name"]));
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $url = basename($_FILES["Url"]["name"]);
+        if (move_uploaded_file($_FILES["Url"]["tmp_name"], $target_file)) {
+            return $url;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
         return false;
     }
+
 }
 
 function messageWarning()
