@@ -125,7 +125,7 @@ include("inc/head.php");
 
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
-                            <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
+                            <a href="listSlider" class="btn btn-rounded btn-danger col-2">Vazgeç</a>
                         </form>
 
 

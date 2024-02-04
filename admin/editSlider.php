@@ -86,7 +86,7 @@ if (isset($_GET["id"])) {
                                                             title: 'Başarılı',
                                                             text: 'Slider Güncellendi',
                                                         })</script>";
-                                            echo '<script>window.location.href = "listSlider";</script>';
+                                            echo '<script>window.location.href = "listBlog";</script>';
                                             exit();
 
                                         } else {
@@ -162,7 +162,7 @@ if (isset($_GET["id"])) {
 
                             </div>
                             <button type="submit" class="col-2 btn btn-rounded btn-success mr-4">Yükle</button>
-                            <button class="btn btn-rounded btn-danger col-2">Vazgeç</button>
+                            <a href="listSlider" class="btn btn-rounded btn-danger col-2">Vazgeç</a>
                         </form>
                     </div>
                 </div>
