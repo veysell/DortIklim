@@ -40,7 +40,6 @@ include("inc/head.php")
                                 $banners = getAllData("banner");
                                 foreach ($banners as $banner) {
                                     ?>
-
                                     <tr>
                                         <td class="col-2">
                                             <?= $banner["Name"] ?>
