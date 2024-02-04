@@ -38,6 +38,7 @@ include("inc/head.php")
                                 <label for="exampleTextarea1">Banner Metni</label>
                                 <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Banner alanında görünecek metni giriniz..."></textarea>
                             </div>
+                            
 
                             <button type="submit" class="btn btn-primary mr-2">Yükle</button>
                             <button class="btn btn-danger">Vazgeç</button>
