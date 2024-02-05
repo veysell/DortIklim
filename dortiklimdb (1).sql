@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 04 Şub 2024, 19:05:59
+-- Üretim Zamanı: 05 Şub 2024, 14:29:59
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -72,6 +72,30 @@ INSERT INTO `blog` (`Id`, `AuthorName`, `IsActive`, `Title`, `CreatedDate`, `Des
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `page`
+--
+
+CREATE TABLE `page` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `CreatedDate` datetime NOT NULL,
+  `IsActive` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `page`
+--
+
+INSERT INTO `page` (`Id`, `Name`, `CreatedDate`, `IsActive`) VALUES
+(1, 'Anasayfa', '2024-02-05 13:00:33', 1),
+(2, 'Hakkımızda', '2024-02-05 13:00:33', 1),
+(3, 'Faaliyetlerimiz', '2024-02-05 13:01:50', 1),
+(4, 'Blog', '2024-02-05 13:02:11', 1),
+(5, 'İletişim', '2024-02-05 13:02:24', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `slider`
 --
 
@@ -81,18 +105,29 @@ CREATE TABLE `slider` (
   `Description` text DEFAULT NULL,
   `IsActive` tinyint(1) NOT NULL,
   `ImagePath` text DEFAULT NULL,
-  `CreatedDate` datetime NOT NULL
+  `CreatedDate` datetime NOT NULL,
+  `PageId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
 -- Tablo döküm verisi `slider`
 --
 
-INSERT INTO `slider` (`Id`, `Name`, `Description`, `IsActive`, `ImagePath`, `CreatedDate`) VALUES
-(33, 'asdf', 'adgsadgfsdgf', 1, 'pexels-francesco-ungaro-1525041.jpg', '2024-02-03 18:04:41'),
-(35, 'adfasdasd', 'sdfsdf\r\nsdfsdfsd\r\nsdfsdfsdf', 1, 'test.png', '2024-02-03 18:28:46'),
-(36, 'test', 'asdasdasd', 1, 'test.png', '2024-02-03 18:37:24'),
-(37, 'test1123', 'gsdfgsdfg', 1, 'pexels-francesco-ungaro-1525041.jpg', '2024-02-03 18:38:49');
+INSERT INTO `slider` (`Id`, `Name`, `Description`, `IsActive`, `ImagePath`, `CreatedDate`, `PageId`) VALUES
+(33, 'asdf', 'adgsadgfsdgf', 1, 'pexels-francesco-ungaro-1525041.jpg', '2024-02-03 18:04:41', 1),
+(35, 'adfasdasd', 'sdfsdf\r\nsdfsdfsd\r\nsdfsdfsdf', 1, 'test.png', '2024-02-03 18:28:46', 1),
+(36, 'test', 'asdasdasd', 1, 'test.png', '2024-02-03 18:37:24', 1),
+(37, 'test1123', 'gsdfgsdfg', 1, 'pexels-francesco-ungaro-1525041.jpg', '2024-02-03 18:38:49', 1),
+(39, 'test anasayfa 1', 'asdfasdfasdfasdfasdfasdf', 1, 'test.png', '2024-02-05 13:32:38', 1),
+(40, 'test hakkimizda 1', 'asfasdfasdfasdfa', 1, 'test.png', '2024-02-05 13:34:55', 2),
+(42, 'asfasdfasfd', 'asdfasdfasdf', 1, 'test.png', '2024-02-05 13:42:41', 1),
+(43, 'asfasdfasfd', 'asdfasdfasdf', 1, '81KXvv9bd9L._AC_UF1000,1000_QL80_.jpg', '2024-02-05 13:45:18', 1),
+(44, 'test', 'dfgsdfgsdfg', 1, 'test.png', '2024-02-05 13:48:47', 1),
+(48, 'sdgfsdfg', 'sdfgsdfg', 0, 'test.png', '2024-02-05 13:58:43', 1),
+(50, 'ssdfgsdfg', 'sdfgsdfgsdfg', 1, '81KXvv9bd9L._AC_UF1000,1000_QL80_.jpg', '2024-02-05 13:59:34', 3),
+(51, 'sgsdgsdfg', 'dfsdfgsfg', 1, '81KXvv9bd9L._AC_UF1000,1000_QL80_.jpg', '2024-02-05 14:00:50', 5),
+(52, 'sdfgsdfgs', 'sdfgsdfgs', 1, '81KXvv9bd9L._AC_UF1000,1000_QL80_.jpg', '2024-02-05 14:01:00', 4),
+(53, 'dfhdfghdfh', 'dfhgdfghdfgh', 1, 'indir.png', '2024-02-05 14:18:50', 2);
 
 -- --------------------------------------------------------
 
@@ -136,10 +171,17 @@ ALTER TABLE `blog`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Tablo için indeksler `page`
+--
+ALTER TABLE `page`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Tablo için indeksler `slider`
 --
 ALTER TABLE `slider`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `PageId` (`PageId`);
 
 --
 -- Tablo için indeksler `user`
@@ -166,16 +208,32 @@ ALTER TABLE `blog`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `page`
+--
+ALTER TABLE `page`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `user`
 --
 ALTER TABLE `user`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Dökümü yapılmış tablolar için kısıtlamalar
+--
+
+--
+-- Tablo kısıtlamaları `slider`
+--
+ALTER TABLE `slider`
+  ADD CONSTRAINT `slider_ibfk_1` FOREIGN KEY (`PageId`) REFERENCES `page` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
