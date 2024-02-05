@@ -1,5 +1,8 @@
 <?php
+include("admin/database/connection.php");
 include("inc/header.php");
+
+//$sliders = frontGetAllData("slider");
 ?>
 
 <head>
@@ -14,8 +17,8 @@ include("inc/header.php");
 
         #kayitFormu {
 
-           display:flex;
-           justify-content: space-between;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             border-radius: 10px;
             background: #ffffff;
@@ -24,7 +27,8 @@ include("inc/header.php");
             margin-top: 20px;
             padding: 15px;
             text-align: center;
-            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            ;
         }
 
         #kayitFormu form {
@@ -60,10 +64,10 @@ include("inc/header.php");
         form {
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            padding: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             animation: fadeInUp 1s ease;
+            background: none;
             /* Animasyon adı, süre, geçiş fonksiyonu */
         }
 
@@ -130,21 +134,50 @@ include("inc/header.php");
     </style>
 </head>
 
-<body>
-    <div id="kayitFormu">
 
-        <form action="kayityap.php" method="get">
-            <h3>Gönüllü Kayıt Formu</h3>
-            <input type="text" name="adiniz" placeholder="Adınız ve Soyadınız" required maxlength="6" />
-            <input type="email" name="eposta" placeholder="E-Mail adresiniz" required />
-            <select class="form-control" id="exampleSelectGender" required>
-                <option>Cinsiyetiniz</option>
-                <option>Kadın</option>
-                <option>Erkek</option>
-                <option>Belirtmek İstemiyorum</option>
-            </select>
-            <input type="phonenumber" name="phonenumber" placeholder="Telefon numaranız" required pattern="[0-9a-zA-Z]{5}" />
-            <input class="btn" type="submit" value="KAYIT OL" />
-        </form>
+
+
+<div class="site-section">
+    <div class="container">
+
+
+        <div class="col">
+
+            <form class="" action="kayityap.php" method="get">
+                <div class="row cause shadow-sm bg-white">
+                    <div class="col-4 px-3 pt-3 border-top-0 border border shadow-sm" style="background-image: url('images/img_3_gray.jpg');">
+                    </div>
+
+                    <div class="col-8 px-3 pt-3 border-top-0 border border shadow-sm">
+                        <h3 class="form-group">Gönüllü Kayıt Formu</h3>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="adiniz" placeholder="Adınız ve Soyadınız" required maxlength="6" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="eposta" placeholder="E-Mail adresiniz" required />
+
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="exampleSelectGender" required>
+                                <option>Cinsiyetiniz</option>
+                                <option>Kadın</option>
+                                <option>Erkek</option>
+                                <option>Belirtmek İstemiyorum</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="phonenumber" name="phonenumber" placeholder="Telefon numaranız" required pattern="[0-9]{5}" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-conrol btn btn-success" type="submit" value="KAYIT OL" />
+                        </div>
+            </form>
+        </div>
+
     </div>
-</body>
+</div>
+</div>
+
+
+</div>
+</div>
