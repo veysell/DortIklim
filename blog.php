@@ -43,8 +43,7 @@ $blogs = frontGetAllData("blog");
 
               <div>
                 <div class="mb-3">
-                  <span class="mr-3"> <span class="icon-bookmark mr-2 text-muted"></span><a href="#">Cause</a>, <a
-                      href="#">Event</a></span>
+                  <span class="mr-3"> <span class="icon-bookmark mr-2 text-muted"></span><a href="#"><?=$blog["Title"]?></a></span>
                   <span> <span class="icon-person mr-2 text-muted"></span><?=$blog["AuthorName"]?></span>
                 </div>
                 <h3><?=$blog["Description"]?></h3>

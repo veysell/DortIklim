@@ -44,7 +44,7 @@
                     <div class="col-md-6 text-md-left pl-0">
                         <a href="#" class=" pr-3 pl-0">Home</a>
                         <a href="#" class="p-3">Events</a>
-                        <a href="Membership.php" class="p-3">Become A Volunteer</a>
+                        <a href="uyeol" class="p-3">Become A Volunteer</a>
                     </div>
                     <div class="col-md-6 text-md-right">
                         <a href="#" class="p-3"><span class="icon-twitter"></span></a>
@@ -61,14 +61,14 @@
 
                     <div class="site-logo">
                         <a href="home">
-                            <img src="images/logo1.png" alt="4Iklim Logo" width="250px">
+                            <img src="images/logo1.svg" alt="4Iklim Logo" width="250px">
                         </a>
                     </div>
 
                     <nav class="site-navigation text-left ml-auto" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                            <li><a href="home" class="nav-link">Home</a></li>
-                            <li><a href="about" class="nav-link">About Us</a></li>
+                            <li><a href="home" class="nav-link">Anasayfa</a></li>
+                            <li><a href="about" class="nav-link">Hakkımızda</a>
                             <li><a href="activity" class="nav-link">Our Causes</a></li>
                             <li><a href="blog" class="nav-link">Blog</a></li>
                             <li><a href="contact" class="nav-link">Contact</a></li>
