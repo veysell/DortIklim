@@ -3,6 +3,8 @@ include("admin/database/connection.php");
 include("inc/header.php");
 
 $blogs = frontGetAllData("blog");
+$sliders = frontGetSlider("slider", 4);
+$slider = $sliders[0];
 ?>
 
 <div class="owl-carousel-wrapper">
@@ -10,12 +12,17 @@ $blogs = frontGetAllData("blog");
 
 
   <div class="box-92819">
-    <h1 class="text-white mb-3">Blog</h1>
-    <p class="lead text-white">Blog yazılarımız</p>
+    <h1 class="text-white mb-3">
+      <?= $slider["Name"] ?>
+    </h1>
+    <p class="lead text-white">
+      <?= $slider["Description"] ?>
+    </p>
   </div>
 
 
-  <div class="ftco-cover-1 overlay" style="background-image: url('images/hero_2.jpg');"></div>
+  <div class="ftco-cover-1 overlay" style="background-image: url('images/<?= $slider["ImagePath"] ?>');"></div>
+
 
 </div>
 
@@ -32,21 +39,32 @@ $blogs = frontGetAllData("blog");
         ?>
         <div class="col-md-6">
           <div class="event-29191 mb-5">
-            <img style="width: 500px; height: 300px; border-radius: 10px; align:center;" src="images/<?=$blog["ImagePath"]?>" alt="Image" class="d-block mb-3 img-fluid rounded">
+            <img style="width: 500px; height: 300px; border-radius: 10px; align:center;"
+              src="images/<?= $blog["ImagePath"] ?>" alt="Image" class="d-block mb-3 img-fluid rounded">
             <div class="px-3 d-flex">
 
               <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
-                <span class="text-white h3 m-0 d-block"><?=date("d", strtotime($blog["Date"]))?></span>
-                <span class="text-white small"><?=
-                date("d-m-Y", strtotime($blog["Date"])) ?></span>
+                <span class="text-white h3 m-0 d-block">
+                  <?= date("d", strtotime($blog["Date"])) ?>
+                </span>
+                <span class="text-white small">
+                  <?=
+                    date("d-m-Y", strtotime($blog["Date"])) ?>
+                </span>
               </div>
 
               <div>
                 <div class="mb-3">
-                  <span class="mr-3"> <span class="icon-bookmark mr-2 text-muted"></span><a href="#"><?=$blog["Title"]?></a></span>
-                  <span> <span class="icon-person mr-2 text-muted"></span><?=$blog["AuthorName"]?></span>
+                  <span class="mr-3"> <span class="icon-bookmark mr-2 text-muted"></span><a href="#">
+                      <?= $blog["Title"] ?>
+                    </a></span>
+                  <span> <span class="icon-person mr-2 text-muted"></span>
+                    <?= $blog["AuthorName"] ?>
+                  </span>
                 </div>
-                <h3><?=$blog["Description"]?></h3>
+                <h3>
+                  <?= $blog["Description"] ?>
+                </h3>
               </div>
 
             </div>
@@ -55,7 +73,7 @@ $blogs = frontGetAllData("blog");
         <?php
       }
       ?>
-      
+
 
 
       <!-- <div class="col-12 text-center">

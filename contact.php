@@ -2,7 +2,8 @@
 include("admin/database/connection.php");
 include("inc/header.php");
 
-//$sliders = frontGetAllData("slider");
+$sliders = frontGetSlider("slider",5);
+$slider = $sliders[0];
 ?>
 
 
@@ -11,12 +12,12 @@ include("inc/header.php");
 
 
     <div class="box-92819">
-      <h1 class="text-white mb-3">Contact</h1>
-      <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ab doloremque a quia laboriosam suscipit, iure illum perspiciatis!</p>
+      <h1 class="text-white mb-3"><?=$slider["Name"]?></h1>
+      <p class="lead text-white"><?=$slider["Description"]?></p>
     </div>
 
 
-      <div class="ftco-cover-1 overlay" style="background-image: url('images/hero_3.jpg');"></div>
+      <div class="ftco-cover-1 overlay" style="background-image: url('images/<?=$slider["ImagePath"]?>');"></div>
 
   </div>
 

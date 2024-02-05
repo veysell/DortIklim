@@ -20,6 +20,34 @@ function getAllData($table)
 
     return $data;
 }
+function getSliderData($pageid){
+    global $baglanti;
+
+    $sql = "SELECT * FROM slider where PageId='$pageid' order by  CreatedDate desc";
+    $query = $baglanti->prepare($sql);
+    $query->execute();
+    $data = array();
+
+    if ($query->rowCount() > 0) {
+        while ($row = $query->fetch()) {
+            $data[] = $row;
+        }
+    }
+
+    return $data;
+
+}
+
+function getPageName($pageid)
+{
+    global $baglanti;
+
+    $sql = "SELECT * FROM page where Id='$pageid'";
+    $query = $baglanti->prepare($sql);
+    $query->execute();
+    $row = $query->fetch();
+    return $row;
+}
 
 function deleteById($id, $table)
 {
@@ -36,6 +64,20 @@ function deleteById($id, $table)
     return $result;
 }
 
+function deleteSliderByPageId($id, $page){
+    global $baglanti;
+
+    $sql = "DELETE FROM slider WHERE Id = :id and PageId=:page";
+
+
+    $query = $baglanti->prepare($sql);
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->bindParam(':page', $page);
+
+    $result = $query->execute();
+
+    return $result;
+}
 
 function getById($id, $table)
 {
@@ -68,6 +110,7 @@ function updateSlider($id, $name, $desc, $active, $url)
     $query->bindParam(':id', $id, PDO::PARAM_INT);
     $query->bindParam(':name', $name);
     $query->bindParam(':desc', $desc);
+
     if ($url != "null") {
         $query->bindParam(':url', $url);
     }
@@ -77,13 +120,13 @@ function updateSlider($id, $name, $desc, $active, $url)
     return $result;
 
 }
-function insertSlider($name, $desc, $active, $uid)
+function insertSlider($name, $desc, $active, $uid,$page)
 {
     global $baglanti;
     $date = date("Y-m-d H:i:s");
     // Diğer sütunları ekleyin...
 
-    $query = "INSERT INTO slider (Name, Description,IsActive,ImagePath,CreatedDate) VALUES ('$name', '$desc','$active','$uid','$date')";
+    $query = "INSERT INTO slider (Name, Description,IsActive,ImagePath,CreatedDate,PageId) VALUES ('$name', '$desc','$active','$uid','$date','$page')";
     $result = $baglanti->prepare($query);
     $result->execute();
     if ($result) {

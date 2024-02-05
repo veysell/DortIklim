@@ -54,7 +54,8 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
           }
         </style>
         <!-- ... diğer HTML kodları ... -->
-        <button class="navbar-toggler navbar-toggler align-self-center custom-button" type="button" data-toggle="minimize">
+        <button class="navbar-toggler navbar-toggler align-self-center custom-button" type="button"
+          data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
       </div>
@@ -67,12 +68,17 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
                 <span class="count bg-success"></span>
               </div>
               <div class="profile-name">
-                <h5 class="mb-0 font-weight-normal"><?= $_SESSION["Name"] . " " . $_SESSION["Surname"] ?></h5>
-                <span><?= $_SESSION["role"] ?></span>
+                <h5 class="mb-0 font-weight-normal">
+                  <?= $_SESSION["Name"] . " " . $_SESSION["Surname"] ?>
+                </h5>
+                <span>
+                  <?= $_SESSION["role"] ?>
+                </span>
               </div>
             </div>
             <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-            <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+            <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
+              aria-labelledby="profile-dropdown">
               <a href="#" class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-dark rounded-circle">
@@ -121,12 +127,22 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
           </a>
         </li>
         <li class="nav-item menu-items">
-          <a class="nav-link" href="listSlider">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <span class="menu-icon">
-              <i class="mdi mdi-access-point"></i>
+              <i class="mdi mdi-laptop"></i>
             </span>
-            <span class="menu-title">Sliderlar</span>
+            <span class="menu-title">Slider Yönetimi</span>
+            <i class="menu-arrow"></i>
           </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="listSlider?id=1">Anasayfa</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listSlider?id=2">Hakkımızda</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listSlider?id=3">Faaliyetlerimiz</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listSlider?id=4">Blog</a></li>
+              <li class="nav-item"> <a class="nav-link" href="listSlider?id=5">İletişim</a></li>
+            </ul>
+          </div>
         </li>
         <li class="nav-item menu-items">
           <a class="nav-link" href="listBanner">

@@ -37,3 +37,20 @@ function frontGetAllData($table){
 
     return $data;
 }
+
+function frontGetSlider($table,$id){
+    global $baglanti;
+    $sql = "SELECT * FROM $table where IsActive=1 and PageId='$id' order by CreatedDate desc";
+    $query = $baglanti->prepare($sql);
+    $query->execute();
+    $data = array();
+    
+    if ($query->rowCount() > 0) {
+        while($row = $query->fetch()) {
+            $data[] = $row;
+        }
+    }
+
+    return $data;
+}
+
