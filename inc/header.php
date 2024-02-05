@@ -71,6 +71,7 @@
                             <li><a href="about" class="nav-link">Hakkımızda</a>
                             <li><a href="activity" class="nav-link">Faaliyetlerimiz</a></li>
                             <li><a href="blog" class="nav-link">Blog</a></li>
+                            <li><a href="FQA.php" class="nav-link">SSS</a></li>
                             <li><a href="contact" class="nav-link">İletişim</a></li>
                         </ul>
                     </nav>

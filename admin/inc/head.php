@@ -185,7 +185,14 @@ if (!(isset($_SESSION["Oturum"]) && $_SESSION["Oturum"] == "6789")) {
             <span class="menu-title">Kullanıcılar </span>
           </a>
         </li>
-
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="FQA">
+            <span class="menu-icon">
+              <i class="mdi mdi-account-multiple"></i>
+            </span>
+            <span class="menu-title">Sıkça Sorulan Sorular </span>
+          </a>
+        </li>
 
 
       </ul>
