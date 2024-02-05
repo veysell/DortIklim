@@ -69,10 +69,10 @@
                         <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                             <li><a href="home" class="nav-link">Anasayfa</a></li>
                             <li><a href="about" class="nav-link">Hakkımızda</a>
-                            <li><a href="activity" class="nav-link">Our Causes</a></li>
+                            <li><a href="activity" class="nav-link">Faaliyetlerimiz</a></li>
                             <li><a href="blog" class="nav-link">Blog</a></li>
-                            <li><a href="contact" class="nav-link">Contact</a></li>
                             <li><a href="FQA.php" class="nav-link">SSS</a></li>
+                            <li><a href="contact" class="nav-link">İletişim</a></li>
                         </ul>
                     </nav>
 

@@ -1,6 +1,11 @@
 <?php
 include_once("queries/queries.php");
-include("inc/head.php")
+include("inc/head.php");
+
+if (isset($_GET["id"])) {
+    $pageid=intval($_GET["id"]);
+    $pageName=getPageName($pageid);
+}
     ?>
 <style>
     .multiline {
@@ -20,8 +25,8 @@ include("inc/head.php")
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title d-flex justify-content-between align-items-center">Slider Listesi
-                        <a class="btn btn-primary btn-icon-text" href="addSlider">Slider Ekle</a>
+                    <h4 class="card-title d-flex justify-content-between align-items-center">Slider Listesi (<?=$pageName["Name"]?>)
+                        <a class="btn btn-primary btn-icon-text" href="addSlider?id=<?=$pageName["Id"]?>">Slider Ekle</a>
                     </h4>
                     <div class="table-responsive">
                     <table class="table table-hover">
@@ -37,7 +42,7 @@ include("inc/head.php")
                             </thead>
                             <tbody>
                                 <?php
-                                $sliders = getAllData("slider");
+                                $sliders = getSliderData($pageid);
                                 foreach ($sliders as $slider) {
                                     ?>
 
@@ -65,10 +70,10 @@ include("inc/head.php")
                                         </td>
                                         <td class="col-1">
                                             <a class="btn badge badge-warning"
-                                                href='editSlider?id=<?= $slider["Id"] ?>'>Düzenle</a>
+                                                href='editSlider?id=<?= $slider["Id"]?>&page=<?=$pageid?>'>Düzenle</a>
                                         </td>
                                         <td class="col-1">
-                                            <a href="delete?id=<?=$slider["Id"]?>&table=slider"
+                                            <a href="deleteslider?id=<?=$slider["Id"]?>&page=<?=$pageid?>"
                                                 class="btn badge badge-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
                                             <?php
                                             ?>

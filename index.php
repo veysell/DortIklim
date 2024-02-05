@@ -2,7 +2,7 @@
 include("admin/database/connection.php");
 include("inc/header.php");
 
-$sliders = frontGetAllData("slider");
+$sliders = frontGetSlider("slider",1);
 ?>
 
 

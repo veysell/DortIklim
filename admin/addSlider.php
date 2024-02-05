@@ -2,7 +2,11 @@
 include_once("queries/queries.php");
 
 include("inc/head.php");
+if(isset($_GET["id"])){
 
+    $id = $_GET["id"];
+    $pagename=getPageName($id);
+}
 ?>
 
 <style>
@@ -23,12 +27,12 @@ include("inc/head.php");
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Slider Ekle</h4>
+                        <h4 class="card-title">Slider Ekle - <?=$pagename["Name"]?></h4>
                         <?php
                         if (($_POST)) {
                             $name = $_POST["sliderName"];
                             $desc = $_POST["sliderDesc"];
-
+                            $page= $_POST["page"];
                             $active = (isset($_POST["isActive"]) == '') ? 0 : 1;
 
 
@@ -48,7 +52,7 @@ include("inc/head.php");
 
                             if ($uploadOk == 1) {
                                 if (move_uploaded_file($_FILES["Url"]["tmp_name"], $target_file)) {
-                                    $result = insertSlider($name, $desc, $active, $url);
+                                    $result = insertSlider($name, $desc, $active, $url,$page);
                                     if ($result) {
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
                                         echo "<script> Swal.fire({
@@ -56,7 +60,7 @@ include("inc/head.php");
                                                         title: 'Başarılı',
                                                         text: 'Slider eklendi',
                                                     })</script>";
-                                        echo '<script>window.location.href = "listSlider";</script>';
+                                        echo "<script>window.history.go(-2);</script>";
                                         exit();
                                     } else {
                                         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
@@ -88,7 +92,7 @@ include("inc/head.php");
                                     placeholder="Slider İsmi Giriniz...">
                             </div>
 
-
+                            <input type="text" hidden value="<?=$id?>" name="page">
                             <style>
                                 label i {
                                     font-size: 90%;

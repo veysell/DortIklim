@@ -5,6 +5,8 @@ include("inc/head.php");
 if (isset($_GET["id"])) {
 
     $id = $_GET["id"];
+    $pageid= $_GET["page"];
+    $pagename=getPageName($pageid);
     $resultdata = getById($id, "slider");
     $IsActive = $resultdata["IsActive"] == "1" ? true : false;
 }
@@ -29,11 +31,12 @@ if (isset($_GET["id"])) {
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Slider Düzenleme</h4>
+                        <h4 class="card-title">Slider Düzenleme - <?=$pagename["Name"]?></h4>
                         <?php
                         if (($_POST)) {
                             $name = $_POST["sliderName"];
                             $desc = $_POST["sliderDesc"];
+                            $$pageid = $_POST["pageid"];
                             $active = (isset($_POST["isActive"]) == '') ? 0 : 1;
                             $imagePath = isset($_FILES["Url"]["name"]) == "" ? null : $_FILES["Url"]["name"];
                             $id = $_POST["Id"];
@@ -47,7 +50,7 @@ if (isset($_GET["id"])) {
                                                         title: 'Başarılı',
                                                         text: 'Slider güncellendi',
                                                     })</script>";
-                                    echo '<script>window.location.href = "listSlider";</script>';
+                                    echo '<script>window.history.go(-2);</script>';
                                     exit();
                                 } else {
                                     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>';
@@ -57,7 +60,6 @@ if (isset($_GET["id"])) {
                                                         text: 'işlem başarısız oldu',
                                                     })</script>";
 
-                                    echo '<script>window.location.href = "listSlider";</script>';
                                     exit();
 
                                 }
@@ -86,7 +88,7 @@ if (isset($_GET["id"])) {
                                                             title: 'Başarılı',
                                                             text: 'Slider Güncellendi',
                                                         })</script>";
-                                            echo '<script>window.location.href = "listBlog";</script>';
+                                            echo '<script>window.history.go(-2);</script>';
                                             exit();
 
                                         } else {
@@ -96,7 +98,6 @@ if (isset($_GET["id"])) {
                                                         title: 'Hata',
                                                         text: 'Database hatası',
                                                     })</script>";
-                                            echo '<script>window.location.href = "listSlider";</script>';
                                             exit();
                                         }
                                     } else {
@@ -106,7 +107,6 @@ if (isset($_GET["id"])) {
                                                         title: 'Hata',
                                                         text: 'Resim yüklenemedi',
                                                     })</script>";
-                                        echo '<script>window.location.href = "listSlider";</script>';
                                         exit();
                                     }
                                 }
@@ -117,6 +117,7 @@ if (isset($_GET["id"])) {
 
                         <form class="forms-sample" method="post" action="editSlider" enctype="multipart/form-data">
                             <input type="text" style="display:none;" hide name="Id" value="<?= $resultdata["Id"] ?>">
+                            <input type="text" style="display:none;" hide name="page" value="<?= $pageid ?>">
                             <div class="form-group">
                                 <label for="exampleInputName1">Yeni Slider Adı</label>
                                 <input type="text" class="form-control" name="sliderName" id="exampleInputName1"
