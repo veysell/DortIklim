@@ -90,7 +90,19 @@
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/aos.js"></script>
 <script>
- 
+    document.addEventListener("DOMContentLoaded", function () {
+        var fullName = window.location.pathname;
+        var currentPage = fullName.replace('/DortIklim/', ''); /// TODO: replace değeri canlıya alındığında "/" olarak değiştirilecek. bu yorum satırını işlem sonrasında siliniz.
+        console.log(currentPage);
+        var navLinks = document.querySelectorAll('.site-menu a');
+        navLinks.forEach(function (link) {
+            var linkHref = link.getAttribute('href');
+            console.log(linkHref);
+            if (currentPage === linkHref) {
+                link.classList.add('active');
+            }
+        });
+    });
 </script>
 <script src="js/main.js"></script>
 
