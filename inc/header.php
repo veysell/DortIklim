@@ -72,6 +72,7 @@
                             <li><a href="activity" class="nav-link">Our Causes</a></li>
                             <li><a href="blog" class="nav-link">Blog</a></li>
                             <li><a href="contact" class="nav-link">Contact</a></li>
+                            <li><a href="FQA.php" class="nav-link">SSS</a></li>
                         </ul>
                     </nav>
 
